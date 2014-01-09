@@ -1,0 +1,27 @@
+choice
+	depends on MACH_APQ8064_MTP
+	prompt "APQ8064_MTP Based Board"
+
+config MACH_APQ8064_MTP_ORIG
+	bool "Original MACH_APQ8064 MTP"
+	help
+	  Support for Qualcomm MSM7x27 FFA original eval board.
+
+config MACH_BOARD_ZTEMT_NUBIA
+	bool "ZTEMT NUBIA"
+	help
+	  Support for the ZTEMT NUBIA board.
+
+endchoice
+
+config ZTEMT_NONSIGN_RILA
+       default y
+	bool 
+	help
+	  Support for the ZTEMT NONSIGN RILA
+	  
+config ZTEMT_HW_BOARD_TYPE
+	bool "ZTEMT Hardware type"
+	default y
+	help
+	 ZTEMT Hardware type

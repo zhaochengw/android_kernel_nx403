@@ -1,0 +1,57 @@
+menuconfig ZTE_TOUCHSCREEN
+	bool "ZTE Touchscreens"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if ZTE_TOUCHSCREEN
+
+config ZTE_TOUCH_RESISTANCE
+	tristate "ZTE resistance touchscreen"
+	depends on ZTE_TOUCHSCREEN
+	help
+	  Say Y here if you have a resistance touchscreen
+	  
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called zte_res_touch.
+	  
+config ZTE_TOUCH_CAPACITANCE
+	bool "ZTE capacitance touchscreen"
+	depends on ZTE_TOUCHSCREEN
+	help
+	  Say Y here if you gona enable the driver support the following projects:
+
+	  =======================================	
+	  Projects         IC            Vindor       
+
+	              
+	  =======================================	  
+
+	  If unsure, say N.
+	  
+config TOUCHSCREEN_ZTE_ATMEL_MXT336
+	tristate "Atmel_mxt336 driver"
+	depends on ZTE_TOUCH_CAPACITANCE
+	help
+	  Say Y here if you have a Atmel_mxt336 touchscreen
+	  
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called zte_cap_touch.	
+
+config TOUCHSCREEN_ZTE_MELFAS_MMS144
+	tristate "Melfas mms144 driver"
+	depends on ZTE_TOUCH_CAPACITANCE
+	help
+	  Say Y here if you have a Melfas mms144 touchscreen
+	  
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called zte_cap_touch.		  
+endif

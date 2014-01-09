@@ -1,0 +1,3411 @@
+commit 8a8035955691b473736fdf16fb66894cc7fb0bde
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Dec 12 21:25:14 2013 +0800
+
+    问题来源及描述:bug:<cypress fw update to 060E>
+    
+    问题原因:cypress fw update to 060E
+    解决方法：cypess fw update to 060E
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 572027280c6b584ff94edca54f4f729a4996d9c6
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Dec 12 18:34:15 2013 +0800
+
+    问题来源及描述:bug:<tp fw update>
+    
+    问题原因:Cypress fw update to 060D
+    解决方法：update cypress fw to 060D
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 7df6544e9bc7616bacc5a2c28c2edb10fb61fc3e
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Wed Dec 11 21:32:06 2013 +0800
+
+    问题原因:Z5S-MINI  回退 cypress 固件
+    解决方法：Z5S-MINI  回退 cypress 固件
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 25ca488a2e145d88195b47bd303d6060f1e20a6c
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Tue Dec 10 22:35:23 2013 +0800
+
+    问题来源及描述:PR**:<触摸屏BACK键误触发>
+    
+    问题原因:触摸屏固件误触发
+    解决方法：更新触摸屏固件为060A版本
+    评审人:罗长阳
+    
+    ------------------------------------------------------------
+
+commit b2880c2b94eaab6f3deb34893e9fb26a0beef64d
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Dec 10 05:39:13 2013 +0800
+
+    问题原因:Z5S-MINI cypress 固件升级
+    解决方法：解决 “不能退出充电干扰模式” “HOME键自动触发”问题
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit b2283e6a05f41ce2d9e4f0cc9c3e6579f9982088
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Dec 5 10:20:58 2013 +0800
+
+    问题原因:Z5S-MINI TPK屏 去掉手掌锁屏功能
+    解决方法：屏蔽掉手掌锁屏的代码
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit 8a89ed58e2e618fd94359df35c22bf87c4eef6d0
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Dec 5 13:36:21 2013 +0800
+
+    问题原因:1、屏幕乱报点问题；2、点选变成长按
+    解决方法：更新触屏固件 1、加强噪声抑制 2、优化状态机
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit ecb4f3ca4a94e8e8cf2d5c2f1c22f6bdab896c73
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Sat Nov 30 17:05:37 2013 +0800
+
+    问题来源及描述:bug:重启后电量差异较大
+    
+    问题原因:估算电池ocv偏差较大
+    解决方法：增大偏差判断范围
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 832c3a8125a03046b38548b0f0b1493a11a01b3e
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Dec 3 22:24:24 2013 +0800
+
+    问题原因:Z5S-MINI  去掉冗余代码
+    解决方法：Z5S-MINI  去掉冗余代码
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit fe3a75e5ac65d756f212a7060b64a77b158cb4da
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Dec 3 16:08:04 2013 +0800
+
+    问题原因:Z5S-MINI Z5-MINI 新思触屏防止固件交叉烧录
+    解决方法：去掉比较PR号
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit c6778da92573a6a99ffc9ad72ad594c0374070c0
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Tue Dec 3 13:39:13 2013 +0800
+
+    问题来源及描述:bug:高低温重启样机，屏幕不亮
+    问题原因:模组要求关机或重启一定要发指令和按指定时序断电，高通默认是直接关电，不走休眠流程
+    解决方法：在关机流程中增加关屏和电的过程
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 4e4dbb5907c3a5fdc74ffaa3795cdabda198eca3
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Wed Nov 27 16:20:43 2013 +0800
+
+    问题原因: 耳机拔出检测慢，并优化代码缩进格式
+    解决方法：去掉拔出检测延时
+    
+    评审人:sun.li
+
+commit 868ba84357d8a639f0c069824ea6c0621d311ff8
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Tue Nov 26 22:14:31 2013 +0800
+
+    问题原因:Sharp LCD初始化过程中点亮了背光
+    解决方法：初始化过程中关闭背光
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit c151ea3f0d09245ee4d636b585195765e3967c24
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Tue Nov 26 19:23:01 2013 +0800
+
+    问题来源及描述:新增需求:<z5s mini根据新结构优化红外接近参数，去掉开机校准>
+    
+    问题原因:z5s mini根据新结构优化红外接近参数，去掉开机校准
+    解决方法：z5s mini根据新结构优化红外接近参数，去掉开机校准
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit e13eb7ef0eca300f7004715e871be0af96c69f4b
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Tue Nov 26 17:07:18 2013 +0800
+
+    问题原因:原因估计与天马模组有关、以及lk与kernel流程差异有关
+    解决方法：第一次进入kernel时lcd先下点在上电并初始化
+    评审人:马雨+FAE
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-display.c
+    	modified:   drivers/video/msm/mipi_zte_tianma_video_720p_otm1282a.c
+
+commit c7a2d69cc843519716dcf94f8b4eab5e825d4fd0
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Nov 26 16:53:56 2013 +0800
+
+    问题原因:Z5S-MINI Z5-MINI牛仔电工 切换CPU模式 触屏AA区不可用
+    解决方法：注释掉cypress驱动里的mt_close函数
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit 77cf03027dadc5c53fb6e54e6b259910d38f1f21
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Tue Nov 26 11:07:22 2013 +0800
+
+    问题原因: 概率性通话无声音问题
+    解决方法： add the qualcomm CR 312411 and 399846 patch
+    
+    评审人:sun.li
+
+commit cdff45240a07bb6ab2e22e110e2dd6f53b179f52
+Merge: b8ad50f a210acd
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Mon Nov 25 14:47:37 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mini
+
+commit b8ad50f2b714b6f90496bb0e55ef8d1118e84a91
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Mon Nov 25 14:44:10 2013 +0800
+
+    问题原因:RAM compression mode of tianma is FIFO(line buffer),that may cause the image dithering
+    解决方法：by pass RAM compression mode
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit a210acd7e7b016927b33846fadd57b9fa82e0fcf
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Mon Nov 25 13:45:02 2013 +0800
+
+    问题来源及描述:bug:夏普LCD CMD休眠唤醒会有局部显示异常问题
+    问题原因:之前NT35590的背光修改流程对夏普的瑞萨产生影响
+    解决方法：还原代码，将NT35590修改用特定宏替换
+    评审人:唐军
+    
+    ------------------------------------------------------------
+
+commit 9e3f8779e24e8e57858a6e57737f92bb35b0a577
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Mon Nov 25 11:33:30 2013 +0800
+
+    问题来源及描述:bug:调整TE与CLK对齐
+    问题原因:TE与CLK没有对齐，有TEARING产生
+    解决方法：调整refx100
+    评审人:唐军
+    
+    ------------------------------------------------------------
+
+commit 9417eabbfe3e52b048333f78b7186ae96c116929
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Sat Nov 23 21:38:04 2013 +0800
+
+    问题原因:CE标准和高亮模式PMAX_G/C稍大
+    解决方法：稍降CE标准和高亮模式PMAX_G/C
+    评审人:丛珊
+    
+    ------------------------------------------------------------
+
+commit a69005d99bba3d64dd857601eb160f523da436e8
+Author: quyipeng <qu.yipeng@zte.com.cn>
+Date:   Fri Nov 22 16:17:32 2013 +0800
+
+    问题来源及描述:bug:restart crash
+    
+    问题原因: sys_accept4 cause a null pointer when restart is processing
+    解决方法: fix return condition
+    评审人:   liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit d4b107ccc8025a63ae0eaafec9081f27f7e0adff
+Merge: a248268 0e0171e
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri Nov 22 16:34:54 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit a2482681bc835848c825458558830d4906c81e0b
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri Nov 22 16:34:04 2013 +0800
+
+    问题原因:新思触屏 双击唤醒调试
+    解决方法：新思触屏 双击唤醒调试
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit 0e0171e50c9ead9e311889892cd143ad90d0b90c
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Nov 22 16:32:33 2013 +0800
+
+    问题来源及描述:bug:充满后显示98%
+    
+    问题原因:充满后电池电压下降
+    解决方法：显示100%
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 180e81206daee2017c449ca64be917ddaf26126e
+Merge: 35e1022 bcc17ba
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Fri Nov 22 15:52:46 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 35e10223fcb735f203970392caa7e2bf70a706fa
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Fri Nov 22 15:51:00 2013 +0800
+
+    问题来源及描述:bug:使能系统TE与屏TE
+    问题原因:系统TE的GPIO口未配置
+    解决方法：配置系统TE GPIO口
+    评审人:唐军
+    
+    ------------------------------------------------------------
+
+commit bcc17ba0e0ea4febbafc4a22980afffea8231508
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Fri Nov 22 15:50:02 2013 +0800
+
+    问题原因:mipi command type
+    解决方法：修改到几个type为DCS LWrite
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit 9a95863de4a6890366a23bb94704e3a38f2a42d9
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Nov 22 09:50:19 2013 +0800
+
+    问题来源及描述:bug:概率长时间充电不到100%
+    
+    问题原因:电压下降没有重新开始充电
+    解决方法：提高重新开始充电电压
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 6426d72e716460b695bae3dc976ed867149d9764
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Nov 22 09:32:40 2013 +0800
+
+    问题来源及描述:新增需求:合入高通2000mAh电池参数
+    
+    问题原因:合入高通2000mAh电池参数
+    解决方法：合入高通2000mAh电池参数
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 43981b078639820a10359ed41931829fe1ff14de
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Nov 21 14:49:44 2013 +0800
+
+    问题来源及描述:新增需求:修改Z5smini电池总容量
+    
+    问题原因:修改Z5smini电池总容量
+    解决方法：修改Z5smini电池总容量
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 02c0c23623982db5f1b0ea523740828a23552a2a
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Thu Nov 21 10:32:30 2013 +0800
+
+    问题来源及描述:bug:Z5S_MINI command mode 停用屏驱动的0X35控制
+    问题原因:停用屏驱动的TE控制，使用高通系统的
+    解决方法：停用驱动的0X35
+    评审人:唐军
+    
+    ------------------------------------------------------------
+
+commit 7b4922a6626af91758208e1f2fe66e2a7f978ea1
+Author: quyipeng <qu.yipeng@zte.com.cn>
+Date:   Wed Nov 20 20:31:02 2013 +0800
+
+    问题来源及描述:bug:date exceed when set time above 2038
+    
+    问题原因: date exceed when set time above 2038
+    解决方法: add boundary check
+    评审人:   liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit e68796564b5940ec4eb9d970ceb7fe4e9fa95592
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed Nov 20 19:18:58 2013 +0800
+
+    问题来源及描述:新增需求:Z5smini电池容量为2000mAh
+    
+    问题原因:Z5smini电池容量为2000mAh
+    解决方法：修改Z5smini电池容量
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 8a06c24d8bf27bcb07def7518b17c376a2e351aa
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Tue Nov 19 17:29:58 2013 +0800
+
+    问题原因:ic指令太多且每次sleep
+    解决方法：减少sleep次数
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit dc9885461658284716c420979991305f928a6294
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Nov 19 10:56:14 2013 +0800
+
+    问题来源及描述:bug:后摄头驱动流程更改
+    
+    问题原因:后摄头驱动流程更改
+    解决方法：后摄头驱动流程更改
+    评审人:井洪亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/sensors/Makefile
+    	new file:   drivers/media/video/msm/sensors/imx135.h
+    	modified:   drivers/media/video/msm/sensors/msm_sensor_bayer.c
+    	modified:   drivers/media/video/msm/sensors/msm_sensor_init.c
+
+commit 23d0a70e7afe083d628aab73487b8c288e48838e
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Sat Nov 16 14:24:05 2013 +0800
+
+    问题原因:Z5S cypress 0x0605 firmware upgrade
+    解决方法：解决悬空BACK按键不灵敏、32CM大面积触摸不再报点
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit 2fde3eb0c0d43c2e1cc37607b2655c92f4264c2f
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Sat Nov 16 12:21:04 2013 +0800
+
+    问题原因:LCD背光渐变+LP模式
+    解决方法：关闭LCD背光渐变功能+Display On之前切换到HS模式
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_r69431.c
+
+commit e3b0cd8b0d2c79e75359096d7256b8b93051a3e0
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Sat Nov 16 11:15:07 2013 +0800
+
+    问题原因:Z5S-MINI TPK TP firmware upgrade
+    解决方法：Z5S-MINI TPK TP firmware upgrade
+    评审人:majunhai
+    
+    ------------------------------------------------------------
+
+commit e84b09c489d18843dd5ef60373d137b7b1d7da3d
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Fri Nov 15 16:54:00 2013 +0800
+
+    问题原因:天马LCM与sharp屏自适应
+    解决方法：第一次on都走sharp on时序，休眠及其它时候唤醒各自走各自的时序。initialize各自执行
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/nubia-board.c
+    	modified:   arch/arm/mach-msm/board/zte-display.c
+    	modified:   drivers/video/msm/Makefile
+    	modified:   drivers/video/msm/mipi_zte_sharp_720p_r69431.h
+    	new file:   drivers/video/msm/mipi_zte_tianma_720p_otm1282a.h
+    	new file:   drivers/video/msm/mipi_zte_tianma_video_720p_otm1282a.c
+    	modified:   drivers/video/msm/mipi_zte_z5mini_lcd.c
+    	new file:   include/linux/nubia_lcd_ic_type.h
+
+commit 5eb8e1505174688152d4da489374f19501ac8404
+Author: quyipeng <qu.yipeng@zte.com.cn>
+Date:   Fri Nov 15 11:17:31 2013 +0800
+
+    问题来源及描述:PR00188553:开启蓝牙后，重起手机死机
+    
+    问题原因: kernel panic due to null pointer in accept4 func
+    解决方法: add null pointer check
+    评审人:   liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit f8432fe4e484ae56749fa9508f9421d38da247b2
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Fri Nov 15 10:19:36 2013 +0800
+
+    问题原因: add the qualcomm CR 470222 security patch
+    解决方法：verify the size received by the kernel driver within the range
+    avoid stack overrun
+    
+    评审人:sunli
+
+commit 0adbd930fff224ea868c8e886477a558986c5cc4
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Nov 14 20:13:40 2013 +0800
+
+    问题原因:Z5S-MINI CTS 不通过
+    解决方法：将TPK触屏驱动创建的属性节点全改为0660
+    评审人:马军海
+    
+    ------------------------------------------------------------
+
+commit dbb7ce9696670338dfc38b555e2ebccf72dea189
+Author: mayu <ma.yu7@zte.com.cn>
+Date:   Thu Nov 14 15:21:57 2013 +0800
+
+    问题来源及描述:新需求:夏普LCD command mode模式
+    问题原因:增加夏普lcd command mode驱动
+    解决方法：调试
+    评审人:唐军
+    
+    ------------------------------------------------------------
+
+commit b7f8f2d8c98a0c581ca9034a365324fc8c907f31
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Tue Nov 12 16:27:31 2013 +0800
+
+    问题原因:mipi command type error
+    解决方法：use DCS LWrite when video mode
+    评审人:丛珊
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_r69431.c
+
+commit 26b4d74961850fb73f18350279967e445892bcc0
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Mon Nov 11 15:38:39 2013 +0800
+
+    问题原因:NX40X TPK屏 触屏售后悬空问题
+    解决方法：更新固件
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 24ba7f4a9113d7b13908c2c729f860612b6e7262
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Mon Nov 11 14:04:45 2013 +0800
+
+    问题原因:无图像增强功能
+    解决方法：新增
+    评审人:sharp
+    
+    ------------------------------------------------------------
+
+commit 286cb8b9a4bc9d81c2ccd7ba68b07bb09be77dc1
+Author: jiang.junmin_A <jiang.junmin_A@gsv.com>
+Date:   Mon Nov 11 10:23:26 2013 +0800
+
+    问题来源及描述:<cts> testVideoSnapshot 失败
+    
+    问题原因:在测试该项时有概率未拍照成功导致测试Exif信息出错
+    解决方法：使用高通修改方案
+    评审人:魏强
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/vfe/msm_vfe32.c
+
+commit 3fb2c648d204cc277930daa28fa4b31d0ebf6303
+Merge: f3a7e7f 6ccf8ab
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Fri Nov 8 13:23:30 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit f3a7e7fdda1b100d40f20ffa9b0f1fdef8a4ea4b
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Fri Nov 8 13:21:49 2013 +0800
+
+    问题来源及描述:bug:<the NX403A not need the NFC>
+    
+    问题原因:we should close the macro about PN544
+    解决方法：close the macro
+    评审人:dengweiwei
+    
+    ------------------------------------------------------------
+
+commit 6ccf8abee6e856b51cdab3f3f9f1357ded89b96f
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Fri Nov 8 09:11:15 2013 +0800
+
+    问题原因:第一次休眠时IOVCC拉低失败
+    解决方法：不论是否连续显示，进入kernel时强制拉一遍所有上电电压
+    评审人:谭益军
+    
+    ------------------------------------------------------------
+
+commit 258745de929ab792c4c85553abfef19d108da3b7
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Nov 7 18:37:22 2013 +0800
+
+    问题原因:1、升级提醒界面；2、手掌锁屏；3、工厂自动检测；4、synaptics屏版本号读取
+    解决方法：1、增加属性节点，记录开机时是否有升级；2、手掌触摸时上报pressure=300；4、增加属性节点，自动检测sensor通断；5、兼容多种固件（版本号在不同的寄存器）
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 0d71aa28308f93ba57aa4860f4b69fb3831d1322
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu Oct 24 15:58:14 2013 +0800
+
+    问题原因:mhl休眠屏蔽中断影响otg
+    解决方法：不屏蔽中断
+    评审人:yecunkui
+    
+    ------------------------------------------------------------
+
+commit 65f74750cb12715235b4bcfdbce01cb0f242ac11
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Oct 31 15:13:47 2013 +0800
+
+    问题来源及描述:bug:无电池温度脚时无法开机
+    
+    问题原因:关机充电中判断无电池关机
+    解决方法：无温度脚正常开机
+    评审人:周国华
+    
+    ------------------------------------------------------------
+
+commit 44896611c9ff20f939ce18412feb31ddd0470e07
+Merge: ea56565 c19d318
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Oct 31 10:34:24 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit ea5656542446e49367fa2b868870bea16fcb1979
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Oct 31 10:32:44 2013 +0800
+
+    问题来源及描述:新增需求:增加HFR功能
+    
+    问题原因:增加HFR功能
+    解决方法：增加HFR功能
+    评审人:丛珊
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/sensors/imx135_v4l2.c
+
+commit c19d3185c750d75bb30e76b9ace18673799f530d
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Oct 30 18:54:47 2013 +0800
+
+    问题原因:Add Support for board type detect
+    解决方法：get board type by read gpio value
+    评审人:quyipeng
+    
+    ------------------------------------------------------------
+
+commit 196770f762f2bb81e133f42042a4bcdff3359661
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Mon Oct 28 13:32:18 2013 +0800
+
+    问题原因:初始化代码不是最新的、上电时间太长、mipi speed不是典型值
+    解决方法：与FAE一起分析R69431上电及porch、初始化并更新
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit 8e2bb2910387b2b0c4b664f0a1f490cb534feb8b
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Oct 24 12:23:54 2013 +0800
+
+    问题原因:TP 梳理代码
+    解决方法：去掉冗余log
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit e5f0261da3291df1cd82a839ad1c874720e2de3c
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Thu Oct 24 09:53:35 2013 +0800
+
+    Revert "问题来源及描述:bug:<add nfc driver for NXP pn547>"
+    the z5mini use the branch together with the z5s mini but not use the pn574
+    we can'n eanable the pn547 at the two product
+    This reverts commit eb1921938d07320d4196bd1d60218ad514a7a695.
+
+commit 9cf021887a4dd3e3ca5eedfac9d9ae9b8fc8bca4
+Author: wangbaixiang <wang.baixiang@zte.com.cn>
+Date:   Mon Oct 21 14:13:20 2013 +0800
+
+    问题来源及描述:新增需求:屏蔽室wfd卡顿问题改进.
+    
+    问题原因:动态生成视频帧存在一定的不稳定性。
+    解决方法：修改为固定时间间隔生成视频帧。
+    评审人:lisongbo
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm_wfd/enc-mfc-subdev.c
+
+commit f5ecf9b1f2ad82764bf37e211b676d1fe12e1d7f
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Mon Oct 21 12:42:13 2013 +0800
+
+    问题原因:连续显示
+    解决方法：进入kernel时不重新上电初始化
+    评审人:谭益军
+    
+    ------------------------------------------------------------
+
+commit e99dc12477617b62984c9b29ef1503bb6137b199
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Mon Oct 21 11:21:35 2013 +0800
+
+    问题来源及描述:
+    1.优化mini2，mini红外自动校准流程；
+    2.优化打印log
+    
+    问题原因:
+    1.优化mini2，mini红外自动校准流程；
+    2.优化打印log
+    解决方法：
+    1.优化mini2，mini红外自动校准流程；
+    2.优化打印log
+    评审人:zhubing
+    
+    ------------------------------------------------------------
+
+commit 6270f52a613b8603c9058bde6d5324290fb3480e
+Merge: cf8f828 e3a2371
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Fri Oct 18 16:30:50 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit e3a2371fa5f77a1d82e2ece77001dddd6916aff2
+Merge: a029843 c3b1523
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Oct 15 17:13:58 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit a029843e828c13fac5f8cf7ddbd1f66c459d7469
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Oct 15 17:12:56 2013 +0800
+
+    问题来源及描述:bug:将IMX135的DVDD改为1.05V
+    
+    问题原因:将IMX135的DVDD改为1.05V
+    解决方法：将IMX135的DVDD改为1.05V
+    评审人:张亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+
+commit cf8f82891c58ddd81a7e4b7d3bac44903abdd3a2
+Merge: eb19219 c3b1523
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Tue Oct 15 14:19:30 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit eb1921938d07320d4196bd1d60218ad514a7a695
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Tue Oct 15 14:18:29 2013 +0800
+
+    问题来源及描述:bug:<add nfc driver for NXP pn547>
+    
+    问题原因:the nfc contorler changed to PN547
+    解决方法：use new driver
+    评审人:dengweiwei
+    
+    ------------------------------------------------------------
+
+commit c3b1523ed0b04468639a7e88309b341a9245c504
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Tue Oct 15 13:31:22 2013 +0800
+
+    问题原因:9月27日回板pwm接地发热
+    解决方法：B板pwm已正确连接，拉高pwm点亮背光
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit 6433987a0b3f5799ab3ddd049ea355887f2fd65c
+Merge: a8743e4 294976c
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon Oct 14 11:09:21 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit a8743e4baea79c07374778d3b87354264df5ae22
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon Oct 14 11:04:58 2013 +0800
+
+    问题来源及描述:bug:1、增加mini2 camera控制宏，将上电部分与z5mini区分
+                       2、解决后摄头触摸对焦功能失效问题
+    
+    问题原因:1、增加宏控；2、更改前后摄头注册顺序
+    解决方法：1、增加宏控；2、更改前后摄头注册顺序
+    评审人:zhangliang
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini2_defconfig
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+    	modified:   drivers/media/video/msm/Kconfig
+    	modified:   drivers/media/video/msm/sensors/imx135_v4l2.c
+    	modified:   drivers/media/video/msm/sensors/msm_sensor.c
+    	modified:   drivers/media/video/msm/sensors/msm_sensor_init.c
+
+commit 294976c32ede77e94e34854adadfc837eac3ec40
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Sat Oct 12 17:28:14 2013 +0800
+
+    问题来源及描述:bug:imx135对焦马达与imx091冲突，导致imx091对焦失败
+    
+    问题原因:更改imx135对焦马达
+    解决方法：更改imx135对焦马达
+    评审人:张亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+
+commit 5970fa7d53cc865e28650bd9ff27d695ea7000d5
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Fri Oct 11 14:10:52 2013 +0800
+
+    问题来源及描述:添加z5 compass sensor 宏控
+    
+    问题原因:添加z5 compass sensor 宏控
+    解决方法：添加z5 compass sensor 宏控
+    评审人:zhubing
+    
+    ------------------------------------------------------------
+
+commit 650d4f6c83b8ce7af03ba71c5ce1147a83aadcf5
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri Oct 11 08:19:32 2013 +0800
+
+    问题原因:Z5-MINI2初版固件调试，区分Z5-MINI
+    解决方法：增加宏控区分Z5-MINI
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 294c6c83461f9358f4d969248633b051962e306f
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Thu Oct 10 14:11:28 2013 +0800
+
+    问题原因:Dmic ctl no external bypass cap
+    解决方法：set the register bit 4 to 1
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit c8d257c241d0c52e989c3609737966a294b4719d
+Merge: 7abc8fd 5a718eb
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Thu Oct 10 13:56:49 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into MINI_GROUP/Production
+
+commit 7abc8fd0c62e93c68cc2b34b520aa46de6f5a7a1
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Thu Oct 10 13:55:01 2013 +0800
+
+    问题原因:添加DMIC功能宏
+    解决方法：添加DMIC功能宏
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini2_defconfig
+    	modified:   arch/arm/mach-msm/Kconfig
+
+commit 5a718ebe381a2e0d55fe247bff5bddefede889de
+Merge: 0ab01da 99ad0ca
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Oct 10 09:35:24 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 0ab01da623d67046554b1ecbea2a358ad516525e
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Oct 10 09:34:26 2013 +0800
+
+    问题来源及描述:bug:后摄头倒置
+    
+    问题原因:mount angle设置不对
+    解决方法：修改mountain angle
+    评审人:张亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+
+commit 99ad0cab4cf15c7a3f0123dfb8328d53b438f2a2
+Author: yecunkui <ye.cunkui@zte.com.cn>
+Date:   Wed Oct 9 17:38:19 2013 +0800
+
+    问题来源及描述:bug:<SD card detect failed>
+    
+    问题原因:SD card detect GPIO status error
+    解决方法:Modify SD card detect GPIO status
+    评审人:Zhou.Qifang
+    
+    ------------------------------------------------------------
+
+commit 46c1e0a949d12d568d5b3eb99a6eaec282813444
+Merge: d783da8 1998003
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Oct 8 16:13:10 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit d783da83a79df3b883f7b0b07d96cceafa2b47be
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Oct 8 16:10:49 2013 +0800
+
+    问题原因:Z5-MINI2 cypress TP 初版本固件，最下方1CM断线
+    解决方法：导光膜对电容屏容值产生干扰，更新固件
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 1998003395d2fbd90ecbeb6cfc0e6376454def7a
+Merge: 4baffb3 c249ab7
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Oct 8 14:10:31 2013 +0800
+
+    Merge branch 'Z5_MINI_GROUP/Production' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 4baffb39c3a7d5a26a47f6809c02f77ad0d2d569
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Oct 8 14:09:09 2013 +0800
+
+    问题来源及描述:新增需求: add flash driver for main camera
+    
+    问题原因:add flash driver for main camera
+    解决方法：add flash driver for main camera
+    评审人:zhangliang
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+
+commit c249ab7365c7452ef33ee5ff4c26264b0dedceeb
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu Oct 3 14:45:49 2013 +0800
+
+    问题来源及描述:新增需求:
+    1.添加mini2项目sensor驱动
+    2.添加mini与mini2项目sensor区分
+    
+    问题原因:
+    1.添加mini2项目sensor驱动
+    2.添加mini与mini2项目sensor区分
+    解决方法：
+    1.添加mini2项目sensor驱动
+    2.添加mini与mini2项目sensor区分
+    评审人:zhubing
+    
+    ------------------------------------------------------------
+
+commit 6cb943df2e488e793d3b93dd2cac19364525f7c3
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Wed Oct 2 16:58:55 2013 +0800
+
+    问题来源及描述:bug: 主摄头不亮
+    
+    问题原因:上电时序不成功
+    解决方法：调整上电时序，将AVDD先上电
+    评审人:张亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/sensors/msm_sensor.c
+
+commit 5865df8990612ff2f0c85cb5e5be2015c58e8470
+Author: Tang Jun <tang.jun30@zte.com.cn>
+Date:   Wed Oct 2 15:12:47 2013 +0800
+
+    问题原因:lcd驱动(板子pwm接地/tps651 enn异常)
+    解决方法：通过硬件飞线解决
+    评审人:马雨
+    
+    ------------------------------------------------------------
+
+commit 03e8c84562623d3ac749fe805bd5e64018748011
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Wed Oct 2 10:51:04 2013 +0800
+
+    问题原因:区分Z5-MINI与Z5-MINI2的TP固件版本号
+    解决方法：增加宏控
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit d483ecc07c18f10215b802f91f4d1ae113b42895
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Wed Oct 2 10:34:30 2013 +0800
+
+    问题来源及描述:新增需求:add driver for main camera sensor imx135
+    
+    问题原因:add driver for main camera sensor imx135
+    解决方法：add driver for main camera sensor imx135
+    评审人:zhangliang
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini2_defconfig
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+    	modified:   drivers/media/video/msm/sensors/imx135_v4l2.c
+
+commit c8f3b96276e72edb4278661a4acb875b6a228b42
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Oct 1 16:14:30 2013 +0800
+
+    问题原因:NX403 TP DEBUG
+    解决方法：修改的较多，将固件移出了kernel目录,放在device/zte/NX403目录下
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit e51d17346e60db0c870fcc70deb7124a3c31cf37
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Tue Oct 1 11:27:02 2013 +0800
+
+    Revert "问题来源及描述:新增需求: add driver for main camera sensor imx135"
+    
+    This reverts commit 0225cbbd48149dfabae4a0ad1d5a35de38b7d2f6.
+
+commit 0225cbbd48149dfabae4a0ad1d5a35de38b7d2f6
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon Sep 30 15:02:40 2013 +0800
+
+    问题来源及描述:新增需求: add driver for main camera sensor imx135
+    
+    问题原因:add driver for main camera sensor imx135
+    解决方法：add driver for main camera sensor imx135
+    评审人:zhangliang
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini2_defconfig
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+    	modified:   drivers/media/video/msm/sensors/imx135_v4l2.c
+
+commit 5968af72136fca89715f67481f9d5066cf3a7c7b
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Sun Sep 29 14:03:44 2013 +0800
+
+    问题原因:Create Vendor for MINI2
+    解决方法：add apq8064-nubiamini2_defconfig
+    评审人:quyipeng
+    
+    ------------------------------------------------------------
+
+commit 8d695173a9f9c3e6a16a5824eebef9e2bdeaa4ce
+Author: xuexiaojun <xue.xiaojun@zte.com.cn>
+Date:   Wed Sep 25 16:15:38 2013 +0800
+
+    问题原因: u mass storage
+    解决方法：u mass storage
+    评审人: yecunkui
+    
+    ------------------------------------------------------------
+
+commit 4baabfb48c225cddbbc35a153483ff4fc39991fd
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Mon Sep 9 15:41:29 2013 +0800
+
+    问题来源及描述:bug:优化呼吸灯和概率性按键不亮问题
+    
+    问题原因:优化呼吸灯和概率性按键不亮问题
+    解决方法：延长按键定时时间和退出函数时初始化
+    评审人:洪丹龙
+    
+    ------------------------------------------------------------
+
+commit d4c6b39a8b6a6f730c3e31773dfe4516be6f52e3
+Author: zhubing <zhu.bing55@zte.com.cn>
+Date:   Thu Aug 22 11:51:23 2013 +0800
+
+    问题来源及描述:bug:<bug描述>fix the problem that power consume of lcd auto brightness
+    
+    问题原因:fix the problem that power consume of lcd auto brightnes
+    解决方法：fix the problem that power consume of lcd auto brightnes
+    评审人:tian.hong
+    
+    ------------------------------------------------------------
+
+commit 7001a656b2bde541370148c4693e20fcb869d3b8
+Author: zhubing <zhu.bing55@zte.com.cn>
+Date:   Wed Aug 21 17:29:09 2013 +0800
+
+    问题来源及描述:bug:<bug描述>fix the problem that power consume of lcd auto brightness
+    
+    问题原因:fix the problem that power consume of lcd auto brightness
+    解决方法：fix the problem that power consume of lcd auto brightness
+    评审人:tian.hong
+    
+    ------------------------------------------------------------
+
+commit d3c29a64068037aa7cd212d45962cccae233e07f
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Aug 16 15:12:27 2013 +0800
+
+    问题来源及描述:bug:长时间充电显示99%
+    
+    问题原因:充满后待机电池电压下降
+    解决方法：99%时重新开始充电
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit c145988cb4600b654ad70af6123b93c1f176ee10
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Tue Jul 9 10:44:55 2013 +0800
+
+    问题来源及描述:bug:待机唤醒后电量上升
+    
+    问题原因:温度、ocv等条件变化
+    解决方法：合入高通补丁
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit c3fe6664ebad2c73ecfa726ef0a993b412d87375
+Author: yixiaoke <yixiaoke@gsv.com>
+Date:   Wed Aug 14 19:32:08 2013 +0800
+
+    问题原因:修改重连流程，重新发起配对连接
+    解决方法：修改重连流程，重新发起配对连接
+    评审人:马建江
+    
+    ------------------------------------------------------------
+    
+    	modified:   net/bluetooth/smp.c
+
+commit f67dc0afcc23f8eb9fd85be2975fb58753c01bf7
+Author: wu.zehui <wu.zehui@ztem.com.cn>
+Date:   Wed Aug 14 18:51:52 2013 +0800
+
+    问题原因:Monkey死机问题
+    解决方法：打高通补丁
+    评审人:白兵
+    
+    ------------------------------------------------------------
+
+commit 5e2f76939ae1cac4647ec867206f59b04da69929
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Fri Aug 9 10:34:01 2013 +0800
+
+    问题来源及描述:1.增加光感轮询功能 2.优化sensor电源开启时间
+    
+    问题原因:1.增加光感轮询功能 2.优化sensor电源开启时间
+    解决方法：1.增加光感轮询功能 2.优化sensor电源开启时间
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 26b5c6df4bced2f34d5ac5a6f7c9a40efe7aceb2
+Author: majianjiang <ma.jianjiang@zte.com.cn>
+Date:   Fri Jul 12 13:08:58 2013 +0800
+
+    问题来源及描述:PR00171100:<连接多个找寻器后概率性出现掉线>
+    
+    问题原因: 多个找寻器同时发送消息过来时，消息处理函数共享同一资源导致冲突
+    解决方法：去除该共享资源流程，与Z5代码保持同步
+    评审人: 易晓柯
+    
+    ------------------------------------------------------------
+    
+    	modified:   net/bluetooth/l2cap_core.c
+
+commit e7f10dfd734a6c5f1aa6add9c782fa72a1eff2c8
+Merge: e7ed861 3863902
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu Aug 1 19:26:51 2013 +0800
+
+    Merge branch 'Z5_MINI/Production/V1.0' of 192.168.2.25:repo/8064F3161a/qcom/kernel into Z5_MINI/Production/V1.0
+
+commit e7ed861aa800f13aa7d03ebf104559d8abfd444a
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu Aug 1 19:24:50 2013 +0800
+
+    问题原因:lcd 增强过渡相机噪点过度
+    解决方法：降低vivid color增强幅度c2
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit 3863902e2f54d7f67f3d614419acb77eeeaecbe1
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Aug 1 17:15:22 2013 +0800
+
+    问题来源及描述:PR**:<插入特定的zte充电器（非标充），触屏不可用>
+    
+    问题原因:Z5-MINI TPK 触屏 充电器太差，noise太大
+    解决方法：更换固件，跳频，滤波
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/input/touchscreen/synaptics_dsx/PR1479246-S3202_SYNAPTICS.img
+
+commit 3be3d050b4f2cc60e6e97f7854dd74124c5ab032
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Mon Jul 22 11:10:34 2013 +0800
+
+    问题来源及描述:PR176136:<手动重启样机终端处于死机状态>
+    
+    问题原因:kernel panic due to null pointer
+    解决方法：add null pointer check
+    评审人:zhangshengjie
+    
+    ------------------------------------------------------------
+
+commit 248f2e19f60bbf7f9ba751cdb4ad6ebc49d84aef
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed Jul 24 15:39:21 2013 +0800
+
+    问题来源及描述:新增需求:还原高通默认vbatdet设置
+    
+    问题原因:还原高通默认vbatdet设置
+    解决方法：重新充电压差为60mV
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit e99bf8380ee94d4045feac034138e7ac7a5202e5
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Jul 22 18:36:33 2013 +0800
+
+    问题原因:桢率过高
+    解决方法：将桢率由72hz降为66hz
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit 90f95dcc4c3acd4594c6c9cf2e199507523c1987
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Mon Jul 15 15:17:52 2013 +0800
+
+    相关修改: 请同时“更新modem侧”
+    
+    问题原因:we can't dload several phone at the same time use the nubia pid
+    解决方法：reconfig the dload mode use ffae
+    评审人:yecunkui
+    
+    ------------------------------------------------------------
+
+commit d705a24aa27b573233ba32bcfc8f21294212878c
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue Jul 9 16:26:28 2013 +0800
+
+    问题原因:概率性有电流音
+    解决方法：对于部分劣质电视需要去掉hdcp功能
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit 4fe01882ef566a967fc4d4ec247a3d3fe9d375e2
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Jul 4 17:38:25 2013 +0800
+
+    问题原因:键盘背光灯不再根据硬件版本号来判断是什么硬件接口MPP/LED_IC
+    解决方法：MPP for Z5mini; LED_IC for Z5
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 4ebc20228c1130b59f30e745e821245192540e66
+Author: jiang.junmin <jiang.junmin@zte.com.cn>
+Date:   Mon Jul 1 18:09:20 2013 +0800
+
+    问题来源及描述:BUG：开启人脸连续拍照后容易引起死机
+    
+    问题原因:开启人脸连续拍照后容易引起死机
+    解决方法：使用高通补丁
+    评审人:沈小厚
+    
+    ------------------------------------------------------------
+
+commit 9a2f1d81a188dbd2456406892c5a1547ee6f3923
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Mon Jun 24 15:59:23 2013 +0800
+
+    问题原因：Z54.2耳机通话接听挂断瞬时有噪音和插耳机设备切换慢问题
+    解决方法：同步Z5mini的解决方案
+    评审人：杨善武
+
+commit c83a8011f8863a78b629a44e5d9b83ecc03a1b5f
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Mon Jun 24 10:45:28 2013 +0800
+
+    问题原因：耳机通话接听挂断瞬间有杂音以及通道切换慢问题
+    解决方法：micbias和耳机PA时序偏差导致，缩短延时减少时序差
+    评审人：张圣杰
+
+commit c2116529a9ac1630a05edcc718b47d6ff4e77ec2
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Fri Jun 28 11:05:41 2013 +0800
+
+    Revert "问题原因:delete the power debug log"
+    description:Re-enable the power debug log
+    reason:Standby power debug needed
+    reviewer:hong.danlong
+    This reverts commit 0dfc561f85ddef9c7bbee45bb398d57d7311a2e2.
+
+commit 8b021ee7f575dd9ce30199849c6152d4914da355
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Tue Jun 25 17:17:23 2013 +0800
+
+    问题来源及描述:bug:complie err
+    
+    问题原因:complie err
+    解决方法：complie err
+    评审人:guojialiang
+    
+    ------------------------------------------------------------
+
+commit 4e78afdabc612cdf4c1f049d310116919299ca1d
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Tue Jun 25 02:39:51 2013 +0800
+
+    问题来源及描述:bug:插入充电器无法唤醒系统
+    
+    问题原因:PMIC没有检测到插入
+    解决方法：去掉PMIC低功耗和时钟切换
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 8407369ec5c14b41048b9a79d8231c22fbb298f9
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Fri Jun 21 13:18:42 2013 +0800
+
+    问题来源及描述:新增需求:<需求描述>产线要求通过软件规避20%红外生产不良
+    
+    问题原因:硬件IR发射不一致引起
+    解决方法：通过2次校准筛选，配置2套不同参数优化
+    评审人:欧汉飞，朱冰，李翠霞
+    
+    ------------------------------------------------------------
+
+commit 413b76e48ba41716da1bf23b99f31fc3a200c4de
+Merge: 1982e25 37639c9
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Thu Jun 20 17:01:17 2013 +0800
+
+    Merge branch 'Z5_MINI/Production/V1.0' of 192.168.2.25:repo/8064F3161a/qcom/kernel into my_Production/V1.0
+
+commit 1982e25f055c4eb633b1944f1714aebd71ddf67d
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Thu Jun 20 16:58:28 2013 +0800
+
+    问题来源及描述:bug:<we can't dload mutiple devices via usb in dload>
+    
+    问题原因:the ums-disk can't enumeration
+    解决方法：modify the vid/pid to ffe2 in dload mode
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 37639c98bc3226997b8c8d3f0c26eef3fd42491e
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Thu Jun 20 13:35:25 2013 +0800
+
+    问题来源及描述:bug: Google Patch 2013-June CVE-2013-2094
+    
+    问题原因: Google Patch
+    解决方法: NO
+    评审人: NO
+    
+    项目平台:
+    
+    --------------------------------------------------
+    
+    	modified:   kernel/events/core.c
+
+commit 7e31eb5421cf14c3019c61db0a89f7c649314fa9
+Author: zhubing <zhu.bing55@zte.com.cn>
+Date:   Thu Jun 20 14:34:39 2013 +0800
+
+    问题来源及描述:新增需求:<需求描述>close the sensor kernel log
+    
+    问题原因:close the sensor kernel log
+    解决方法：close the sensor kernel log
+    评审人:tian.hong
+    
+    ------------------------------------------------------------
+
+commit 04a571ed672d57239833f3228f606575e86c8037
+Merge: 428ef63 3bb40ad
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Jun 20 14:16:56 2013 +0800
+
+    Merge branch 'Z5_MINI/Production/V1.0' of 192.168.2.25:repo/8064F3161a/qcom/kernel into Z5_MINI_Production_V1.0
+
+commit 428ef6343a29cd9b0f75bd6b8523ee86f8b1f66b
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Jun 20 14:15:32 2013 +0800
+
+    问题来源及描述:新增需求:remove charger log
+    
+    问题原因:remove charger log
+    解决方法：remove charger log
+    评审人:guojialiang
+    
+    ------------------------------------------------------------
+
+commit 3bb40addca6273b26540341a159eb2737a5c89e5
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu Jun 20 14:12:27 2013 +0800
+
+    问题原因:单台样机有闪屏
+    解决方法：提升桢率到72hz
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 0dfc561f85ddef9c7bbee45bb398d57d7311a2e2
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Thu Jun 20 13:58:34 2013 +0800
+
+    问题原因:delete the power debug log
+    解决方法：deconfig the power debug config
+    评审人:ou.hanfei
+    
+    ------------------------------------------------------------
+
+commit 2dd1386978040964166f95fa858cbedb0f85d3f6
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Tue Jun 18 13:24:08 2013 +0800
+
+    问题来源及描述:bug:<the rate of cdma was wrong too >
+    
+    问题原因:the value of rate cdma mode not right
+    解决方法：modify it
+    评审人:yecunkui
+    
+    ------------------------------------------------------------
+
+commit 012acbcbecfa9992a0782e8160eb90abcec08eac
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Tue Jun 18 11:07:20 2013 +0800
+
+    问题来源及描述:bug:<the rate of cdma 1x was wrong>
+    
+    问题原因:the value was not right
+    解决方法：modify the value
+    评审人:yecunkui
+    
+    ------------------------------------------------------------
+
+commit 3f99c4fc8e61a9b4decf5ae5bb9eb237828f1d92
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Mon Jun 17 15:00:46 2013 +0800
+
+    问题原因:Z5-MINI  TPK  触屏 固件升级后 死机
+    解决方法：打印语句中有指针操作内存越界，删除此语句
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit ed5f41229e75015b1b9eff7fd2b572cfcb1dc18f
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Jun 14 20:18:52 2013 +0800
+
+    问题来源及描述:bug:部分样机无法充满电
+    
+    问题原因:4.2基线去掉了电池默认内阻
+    解决方法：增加电池默认内阻
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 1942655c749a4bc7417575f0fdf2a5a09ba915ad
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri Jun 14 15:17:39 2013 +0800
+
+    问题原因:光感暗环境下偏亮
+    解决方法：调整背光
+    评审人:tangyijun
+    
+    ------------------------------------------------------------
+
+commit ee840b24289a35b3aaa55afda1bd2d479ce52b88
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri Jun 14 14:01:53 2013 +0800
+
+    问题原因:Z5-MINI TPK 触屏 38版固件更新
+    解决方法：验证情况良好，防水、悬空、大指等暂时未发现问题，待可靠性验证及FUT验证
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit d2f1016b0e17a41deda8a63c425aa9f41580f1f8
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Jun 14 12:04:45 2013 +0800
+
+    问题来源及描述:bug:charging curent err display
+    
+    问题原因:charging curent err display
+    解决方法：display charging current
+    评审人:guojialiang
+    
+    ------------------------------------------------------------
+
+commit 057b69cefcd656397a0b2a5f7ff9980c2b694575
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Tue Jun 11 10:58:56 2013 +0800
+
+    问题来源及描述:bug:插拔充电器后概率性温度保护不起作用
+    
+    问题原因:温度异常状态更新不及时
+    解决方法：插拔充电器时更新状态
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit ab06cf612fb3c90b5554278bb8f7c65a204c44e6
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Tue Jun 11 10:50:07 2013 +0800
+
+    问题来源及描述:bug:<delete the two disk.just keep the cdrom-device >
+    
+    问题原因:we needn't the two disk
+    解决方法：modify the ums devices
+    评审人:yecunkui
+    
+    ------------------------------------------------------------
+
+commit a1515e8abde39c86eb9b5f8d4cc1f182c0f4ec6b
+Author: shenxiaohou <shen.xiaohou@zte.com.cn>
+Date:   Sun Jun 9 17:53:09 2013 +0800
+
+    问题来源及描述:PR00171561 camera standby current increase 1.4mA
+    
+    问题原因:mipi_csi_vdd don't close
+    解决方法：close the power
+    评审人:[jin.hongliang]
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/csi/msm_csid.c
+
+commit c39190a674a364cefb42c0b202e8b065e1c4b552
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Jun 6 19:54:03 2013 +0800
+
+    问题原因:GoWorld + Cypress TP  firmware 0x0107 update
+    解决方法：优化：1、悬空时单指划线断线；2、边缘划线断线；3、悬空时防水（保证能接电话）；4、百度输入法打字重复
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 398f1d14eb650765cc87700e54099560eec8cf7f
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Wed Jun 5 19:55:43 2013 +0800
+
+    问题来源及描述:新增需求:增加对LCD mipi command mode的支持
+    
+    问题原因:增加对LCD mipi command mode的支持
+    解决方法：增加对LCD mipi command mode的支持
+    评审人:丛珊
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/Kconfig
+    	modified:   drivers/video/msm/Makefile
+    	new file:   drivers/video/msm/mipi_zte_sharp_cmd_720p_nt35590.c
+    	modified:   drivers/video/msm/msm_fb.c
+
+commit 320dc7deae9bdb428419024dd04e69cd58b7c455
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed Jun 5 18:59:14 2013 +0800
+
+    问题原因:第一次启动图像增强未实现
+    解决方法：第一次实现图像增强
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 7613a3eb7d1df8538efc54e272350e4c5fab7d9a
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed Jun 5 10:44:50 2013 +0800
+
+    问题原因:backlight log
+    解决方法：get rid of backlight log
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit d71759ab1024e57b5922c25e8995e3a58183a016
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed Jun 5 10:36:30 2013 +0800
+
+    问题原因:将祯率由70hz降为60hz
+    解决方法：调节timing
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 9e2e6eb3fe76c31fbb4475c87719bb7d61624128
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Wed Jun 5 09:49:40 2013 +0800
+
+    问题来源及描述:bug:<to optimize the drv2605.c>
+    
+    问题原因:optimize the code for Z5-TD linear-vibrator
+    解决方法：modify the code of drv2605.c
+    评审人:zhubing
+    
+    ------------------------------------------------------------
+
+commit 6371d241e320ed96fb00419093396c718aca1c99
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue Jun 4 19:26:09 2013 +0800
+
+    问题原因:lcd 休眠会闪屏的问题
+    解决方法：增加mipi short cmd 休眠，增加贞率
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 54c9b944e70c4471296b46163f170baf305f624d
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue Jun 4 14:06:32 2013 +0800
+
+    问题原因:背光疏密不均
+    解决方法：改变背光等级计算方法
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 0c715e22097c985f0efbc20deac789d80dc9d9f0
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue Jun 4 10:47:12 2013 +0800
+
+    问题原因:增大背光等级解决熄屏不流畅问题
+    解决方法：增大背光等级
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit be893a45b55aa3c85fe6ead19b50451ff4007617
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Jun 3 16:26:27 2013 +0800
+
+    问题原因:change mipi pll
+    解决方法：change mipi pll
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit c5819f24f874bc407c7c13cd402c039b2d68dd4b
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Jun 3 15:32:06 2013 +0800
+
+    问题原因:写休眠指令前切换为CMD1
+    解决方法：切换为CMD1
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit d6471d23323df0b7216547128eaf00650a5e0bd9
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Jun 3 14:32:35 2013 +0800
+
+    问题原因:z5mini严格按照厂商推荐的方来写
+    解决方法：按厂商规定的方式来写
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 924d1bd9e92b544c182b9fe80b1b11e895f476cc
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Mon Jun 3 14:16:51 2013 +0800
+
+    问题原因: optimize the power debug code format
+    解决方法：adjust the indent space
+    评审人:hong.danlong
+    
+    ------------------------------------------------------------
+
+commit 26a326121a254de39abb3457c56575a86ac0e5e2
+Author: yecunkui <ye.cunkui@zte.com.cn>
+Date:   Mon Jun 3 10:23:32 2013 +0800
+
+    问题来源及描述:新增需求:<Disable USB Host3 function>
+    
+    问题原因:Disable USB Host3 function
+    解决方法:Disable USB Host3 function
+    评审人:Li.Chunliang
+    
+    ------------------------------------------------------------
+
+commit 6e95b3b7cfc2bbfe64600e2044190194bf137068
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Sun Jun 2 15:28:50 2013 +0800
+
+    问题原因:应软件经理徐小华工要求，将Z5-MINI cypress 触屏固件版本回退到上一版05版
+    解决方法：回退固件及配置文件，修改相应的固件升级代码
+    评审人:徐小华
+    
+    ------------------------------------------------------------
+
+commit b5db60735a8aeeda8c5fb17b4f55d39c2d517d7f
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Sat Jun 1 16:55:32 2013 +0800
+
+    问题原因:lcd休眠接口函数
+    解决方法：更换接口函数
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 4c89e909a2bb44e6df2dd63de4596844e0ab378c
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Sat Jun 1 10:06:52 2013 +0800
+
+    问题原因:mhl无响应
+    解决方法：读edid的视频格式匹配有误
+    评审人:guojialiang
+    
+    ------------------------------------------------------------
+
+commit f36223cae13a49a9605c71cfdda1d41e9995c089
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Fri May 31 15:52:12 2013 +0800
+
+    问题原因:[CVE-2013-0914] The flush_signal_handlers function in kernel/signal.c in the Linux kernel before
+              3.8.4 preserves the value of the sa_restorer field across an exec operation, which makes it
+              earier for local users to bypass the ASLR protection mechanism via a crafted application
+              containing a sigaction system call.
+    解决方法：signal:always clear sa_restorer on execve
+    评审人:wuzhehui
+    
+    ------------------------------------------------------------
+
+commit e8c973c174babda4ec004d04ed0f8a488e7274d1
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 29 16:27:39 2013 +0800
+
+    问题原因:误删除代码
+    解决方法：重新din提交
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit 325baebbd7c6967ca5c3b7b85f913cb54c37b4fe
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 29 16:13:56 2013 +0800
+
+    问题原因:提交图像增强代码
+    解决方法：提交代码
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit bf2680b63daff5d45da29fb4037372e2d5697fb7
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 29 14:52:55 2013 +0800
+
+    问题原因:增加板级文件bw factor
+    解决方法：add bw factor
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 171d3260d2e0e8b89061cfb9d59c3315cad45d1f
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 29 13:53:28 2013 +0800
+
+    Revert "问题来源及描述:bug:高低温抖屏问题"
+    
+    This reverts commit 1e8d61c0932a111bb97fbc61cd6f651aa512d40c.
+
+commit 4bd44a369b00cddf8e9b6b6122cdf1ed3ec28ade
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue May 28 15:43:39 2013 +0800
+
+    问题原因:z5mini来电会蓝屏的问题
+    解决方法：增加带宽
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 8c6393a4c2d7fd5f5d64b124da7c3d048c76b9bb
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri May 24 17:00:48 2013 +0800
+
+    问题原因:Z5-MINI两款触屏的最新固件更新
+    解决方法：还没到最优状态，还有待优化，稍后继续更新
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 9307608ad959b1d3c32b51c2d16ecbe7d486097e
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri May 24 11:22:13 2013 +0800
+
+    问题原因:bianyi chucuo
+    解决方法：bianyi
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit c4baabea4e401c21d0bd5b1fe1c301ce6aa7b65b
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri May 24 11:13:22 2013 +0800
+
+    问题原因:增大z5mini带宽因子
+    解决方法：增大带宽
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 9154f730ebf37d52bd1416da426008781fd83028
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri May 24 11:10:00 2013 +0800
+
+    问题原因:bw max too small
+    解决方法：change bw max
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit bab2485aeca4107ee85082bf79161356b4f5c5bf
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri May 24 08:43:04 2013 +0800
+
+    问题原因:z5mini 不需要额外增大带宽
+    解决方法：去掉宏控
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 58ff19539860ef9359ddf59413161f0303e3a8a7
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu May 23 19:37:13 2013 +0800
+
+    问题原因:change backlight level for z5mini
+    解决方法：change level
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 3d08782d80c9d062799dc471273083f72064ad57
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu May 23 18:39:30 2013 +0800
+
+    问题原因:为z5mini生效图像增强功能
+    解决方法：生效功能
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit 97dba1de3cbec4fd89387d3b04c81979c90465fc
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 22 10:05:04 2013 +0800
+
+    问题原因:sometimes long press pwr key cannot pop power menu
+    解决方法：modify pwk logic
+    评审人:mahuixian
+    
+    ------------------------------------------------------------
+
+commit c0f0a9ea138e5051b9e0237bb286097f9d9d3cbd
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Mon May 20 14:09:01 2013 +0800
+
+    问题来源及描述:新增需求:modify complie error
+    
+    问题原因:charger module complie error
+    解决方法：modify pm8921-charger.c complie error
+    评审人:guo.jialiang
+    
+    ------------------------------------------------------------
+
+commit f45c5478fbc99f2a87cd51783a31d2f066c2b98f
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Mon May 20 11:12:13 2013 +0800
+
+    fix the compile error and i tell wangshui to handle this
+
+commit 5ca435f57e5f471d7f72ec93d851e41ddac0087b
+Merge: fbf4399 c258d33
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Mon May 20 10:15:38 2013 +0800
+
+    Merge remote-tracking branch 'origin/update/161034' into zte/master161034
+    
+    Conflicts:
+    	drivers/power/pm8921-charger.c
+
+commit fbf43995f6e48844b044b814bc3260086e6d332c
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri May 17 16:01:07 2013 +0800
+
+    问题来源及描述:bug:硬件版本GPIO使用后状态不正确
+    
+    问题原因:在bootloader中配置gpio不起作用
+    解决方法：在kernel中配置gpio状态
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit ab6c7a5c940080873970d593023056e6bf08981e
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Fri May 17 15:19:27 2013 +0800
+
+    问题原因: during poweroffcharge unplug the charger and the phone will
+    not poweroff
+    解决方法：add the timeout wakelock during the unplug charger unplug
+    resume
+    评审人:wang.shuai
+    
+    ------------------------------------------------------------
+
+commit caeef312361b215bce9c137cba2c4ee7d88764fd
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu May 16 18:39:30 2013 +0800
+
+    问题来源及描述:优化g-sensor代码合入
+    
+    问题原因:优化g-sensor代码合入
+    解决方法：优化g-sensor代码合入
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit cf284ab0fc880354544c92958a40a22ba2f341f1
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Fri May 17 09:53:23 2013 +0800
+
+    问题原因:bw is not enough
+    解决方法：increase bw factor
+    评审人:tangjun
+    
+    ------------------------------------------------------------
+
+commit c258d33c4365e947f62c9ddc1f3b72e3dc5e7564
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu May 16 18:39:30 2013 +0800
+
+    问题来源及描述:优化g-sensor代码合入
+    
+    问题原因:优化g-sensor代码合入
+    解决方法：优化g-sensor代码合入
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 4d7ff20da4678cbdd5dedb7576a50153a7ff9602
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Wed May 15 20:27:47 2013 +0800
+
+    问题来源及描述:bug:<MTP can't used in Ubantu>
+    
+    问题原因:the protocl should be 1
+    解决方法：reonfig the desciptor of MTP
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 212077d237516dd2e4ad4bdcc0c596c44ab2e3c4
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 18:28:00 2013 +0800
+
+    问题原因:fix build error for Z5_MINI
+    解决方法：disable CONFIG_TOUCHSCREEN_SYNAPTICS_DSX_FW_UPDATE
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 50d0d27ebddb73ab4c800a1d48c13776dbc46567
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 17:03:19 2013 +0800
+
+    问题原因:fix build error issue
+    解决方法：modify drivers/power/pm8921-charger.c drivers/video/msm/mdp.c
+    评审人:congshan
+    
+    ------------------------------------------------------------
+
+commit 53c746f2b0c6acbc9d7ed7007a222b78b22cf6c8
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 15:45:09 2013 +0800
+
+    问题原因:fix build error
+    解决方法：modify arch/arm/mach-msm/board-8930.c
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit 1c393cfba2151b7bbbb0c690b5eed6fce98465ba
+Merge: 1f982fe 27ddf43
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 15:29:49 2013 +0800
+
+    Merge branch 'update/161034' of 192.168.2.25:repo/8064F3161a/qcom/kernel into update/161034
+
+commit 27ddf43023a72c7c94f026d3c5fd1ac930079772
+Merge: 28f6bff 7564ebe
+Author: shenxiaohou <shen.xiaohou@zte.com.cn>
+Date:   Wed May 15 14:59:45 2013 +0800
+
+    Merge branch 'update/161034' of 192.168.2.25:repo/8064F3161a/qcom/kernel into update/161034
+
+commit 28f6bff830410a0eab5784437a7382d04a1167dc
+Author: shenxiaohou <shen.xiaohou@zte.com.cn>
+Date:   Wed May 15 14:57:13 2013 +0800
+
+    问题来源及描述:新增需求:<update zte-camera.c for baseline 161034>
+    
+    问题原因:update zte-camera.c to new baseline 161034
+    解决方法：change camera kernel driver
+    评审人:[jin.hongliang]
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+
+commit 7564ebe932295af62ea108a97dfbbac981ab5f30
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed May 15 14:48:26 2013 +0800
+
+    问题来源及描述:新增需求:基线升级charger冲突
+    
+    问题原因:基线升级charger冲突
+    解决方法：基线升级charger冲突
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 1f982fe51119af51ac823c47202f3fd9e103328f
+Merge: b59993e fcc57e0
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 14:06:38 2013 +0800
+
+    Merge branch 'update/161034' of 192.168.2.25:repo/8064F3161a/qcom/kernel into update/161034
+
+commit fcc57e091544997926c738c681b31cfe73ca26be
+Author: shenxiaohou <shen.xiaohou@zte.com.cn>
+Date:   Wed May 15 13:45:03 2013 +0800
+
+    问题来源及描述:新增需求:<update camera driver interface to baseline 161034>
+    
+    问题原因: camera interface confilict with baseline 161034
+    解决方法：change imx132 and ov5648 driver
+    评审人:[jin.hongliang]
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/media/video/msm/sensors/imx132.c
+    	modified:   drivers/media/video/msm/sensors/ov5648.c
+
+commit b59993e6d0fd2ddc3c5dd3bde5e9f78864a44972
+Merge: bde7e54 be41e91
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 12:32:56 2013 +0800
+
+    Merge branch 'update/161034' of 192.168.2.25:repo/8064F3161a/qcom/kernel into update/161034
+
+commit bde7e54da362a4d454147e9cfd33e13084040ffd
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 12:31:37 2013 +0800
+
+    问题原因:sync nubia-board.c with qcom baseline 161034
+    解决方法：sync nubia-board.c with board-8064.c
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit be41e91325a433125fbfdba70eb0310f1422bee9
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 15 11:15:50 2013 +0800
+
+    问题原因:qcom 基线升级
+    解决方法：解决升级冲突
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit cbbfa05110207ce19d0b1fb6cdcbf42252046b2a
+Merge: bac2973 263a19f
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 15 11:02:13 2013 +0800
+
+    Merge branch 'update/161034' of 192.168.2.25:repo/8064F3161a/qcom/kernel into update/161034
+
+commit bac29733177840ea66b580cfd5a1ecad97841a50
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 15 11:01:39 2013 +0800
+
+    问题原因:remend the conflict
+    解决方法：remend the conflict
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit 263a19fecea2f8dd6a004c2e1d63de15898a7a16
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 11:00:06 2013 +0800
+
+    问题原因:fix conflicts while merge qcom baseline 161034
+    解决方法：fix conflicts
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 0d868e672a4f2bd5ff34ffc99dc045428d577348
+Merge: 68f659f bdb4fb2
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 15 10:18:15 2013 +0800
+
+    Merge branch 'qcom/baseline/161' into update/161034
+    
+    Conflicts:
+    	arch/arm/mach-msm/board-8064-gpiomux.c
+    	arch/arm/mach-msm/board-8064-pmic.c
+    	drivers/input/touchscreen/Makefile
+    	drivers/media/video/msm/sensors/Makefile
+    	drivers/power/pm8921-charger.c
+    	drivers/video/msm/mdp.c
+    	drivers/video/msm/mdp4.h
+    	drivers/video/msm/mdp4_overlay.c
+    	include/linux/input/synaptics_dsx.h
+    	include/net/cfg80211.h
+
+commit 68f659fd5cc71b4e1a8e1541b68efab428986a64
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed May 15 09:41:43 2013 +0800
+
+    问题原因:vt虚拟控制台可能会死锁
+    解决方法：去掉虚拟控制台
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit d42463c1216e54199b52bb50ea68bc059fc53c23
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Tue May 14 17:22:58 2013 +0800
+
+    问题来源及描述:bug:非标准充电器无法进入关机充电
+    
+    问题原因:新基线充电器判断方式改变
+    解决方法：插入非标准充电器时设置充电类型
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit bdb4fb27e93180a8ba2c3d5639401baa2455f9a1
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Tue May 14 15:05:56 2013 +0800
+
+    A8064AAAAANLYA161034
+
+commit 01fbb867c02c30b47d41586b9a367fdcd990fcd9
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue May 14 13:50:16 2013 +0800
+
+    问题原因:产线z5mini启动过程概率性没动态画面
+    解决方法：去掉第一次的reset操作
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 6ef0b731655cce8956f2617f81f517670c183603
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon May 13 18:55:44 2013 +0800
+
+    问题原因:qcom patch for bw
+    解决方法：qcom patch for bw
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit d777e575d7a433a7e6f608488651590552f7c0bb
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon May 13 15:59:42 2013 +0800
+
+    问题原因:qcom patch for bw problme
+    解决方法：add qcom patch
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 4aba4f901e93361fdbd08aa74c8e2a6da5e3eb4f
+Merge: 1e8d61c ef3575f
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon May 13 14:06:14 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 1e8d61c0932a111bb97fbc61cd6f651aa512d40c
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon May 13 14:05:01 2013 +0800
+
+    问题来源及描述:bug:高低温抖屏问题
+    
+    问题原因:timing和porch设置不当
+    解决方法：修改timing和porch设置
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+
+commit ef3575fc5604b6a717626a5b5e5098be9aa0a054
+Merge: 896c0dc da89e51
+Author: zhanglongbo <zhang.longbo@zte.com.cn>
+Date:   Fri May 10 17:32:52 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into zte/master161030
+
+commit 896c0dcf140628fa1f95668c4dc8c54d2fb1b4df
+Author: zhanglongbo <zhang.longbo@zte.com.cn>
+Date:   Fri May 10 17:30:50 2013 +0800
+
+    问题来源及描述:蓝牙找寻器报警时接电话死机
+    
+    问题原因:空指针异常
+    解决方法：添加空指针异常判断
+    评审人:李松波
+    
+    ------------------------------------------------------------
+
+commit da89e51f30b77ce27fb1bd17487c1f59596c5458
+Merge: 337bc3c a24304a
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri May 10 16:44:54 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 337bc3cef4ebd77860007a2140cb2d3a1f3cf049
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri May 10 16:43:12 2013 +0800
+
+    问题来源及描述:新增需求:将LCD AVDD从2.8调到3.0V
+    
+    问题原因:将AVDD从1.8调到3.0V
+    解决方法：将AVDD从1.8调到3.0V
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-display.c
+
+commit a24304a249148ddbea1ad0fadfaf6c135c81c28f
+Merge: 36f1487 005f1a3
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Fri May 10 16:08:36 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 36f14872ede7488d72deb9aea3708b187f8be0ea
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Fri May 10 16:02:59 2013 +0800
+
+    问题原因:sock_diag: Fix out of bounds access to sock_diag_handlers
+    解决方法：sock_diag: Fix out of bounds access to sock_diag_handlers
+    	  ID:CVE-2013-1773
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit 6e65eca2679aeb6944e549f49048ee904431af18
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Fri May 10 09:41:47 2013 +0800
+
+    A8064AAAAANLYA161033A
+
+commit 005f1a352040bea406db8fa6175e6d1dba2ae6ce
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Thu May 9 19:28:27 2013 +0800
+
+    问题来源及描述:bug:<the MTP can't used in ubantu >
+    
+    问题原因:the class/sub class can't be recognized
+    解决方法：set the mtp device class/subclass to 06/01
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 9bbe919ebe28e767712d9463ae630355cf0ad332
+Merge: a43953f fc30373
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu May 9 18:51:55 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit a43953f84b1e9012bfce91345138790b7e24e61f
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu May 9 18:49:44 2013 +0800
+
+    问题来源及描述:bug:色彩增强设置&porch设置更改
+    
+    问题原因:色彩增强设置&porch设置更改
+    解决方法：色彩增强设置&porch设置更改
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_r63415.c
+    	modified:   drivers/video/msm/mipi_zte_z5mini_lcd.c
+
+commit fc30373a41fc2e2bb21d6faf0cc172c60f083408
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu May 9 17:20:56 2013 +0800
+
+    问题原因:Z5-mini cypress TP firmware update
+    解决方法：修正：1、大指线性度不够好；2、插充电器触屏变慢；3、优化防水
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 336b85f2ae14fb73b7dd5f8b03919a660a755184
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Wed May 8 19:20:14 2013 +0800
+
+    问题来源及描述:bug:<the isa1200 was not used in Z5-mini>
+    
+    问题原因:the default haptic-isa1200 was not used
+    解决方法：close the macro
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 0707059d9b25a6e07d620847bdc71667436ec6ea
+Merge: 6097061 d1cdd37
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed May 8 09:46:56 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit d1cdd37fd163ca15290d507fa27a4bb40627083c
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue May 7 20:28:01 2013 +0800
+
+    问题原因:播放视频1080p视频会出现蓝屏问题
+    解决方法：scale时增大时钟频率
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 6097061b58e70e5d8504e18b3d5858ddc8aab3bc
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Tue May 7 14:41:27 2013 +0800
+
+    问题原因:改善Z5 Cypress TMA463触摸屏抗充电器电源干扰问题
+    解决方法：升级固件版本至0x0C
+    评审人:罗长阳
+    
+    ------------------------------------------------------------
+
+commit c95dce04c3b478cb5b0266153de83e0690c32406
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Mon May 6 10:54:33 2013 +0800
+
+    问题原因：耳机按键概率性无效和无声音
+    解决方法：增加耳机防抖延时
+    评审人：congshan
+
+commit 475b0107c9a2a8a533fd2e73ce5d5eeb7cd0ba34
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri May 3 17:22:53 2013 +0800
+
+    问题来源及描述:新增需求:优化硬件版本显示
+    
+    问题原因:硬件版本不方便上层读取
+    解决方法：以数字方式显示硬件版本号
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 8abba6a8e24509ba7c46f2e72e96510b12c62172
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Fri May 3 13:29:04 2013 +0800
+
+    问题原因:Z5-mini TPK方案触屏 固件自动升级
+    解决方法：添加固件自动升级代码，固件放到文件系统中
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit fdb3e37988851d9214d9293c8c4334361d23c12c
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Sun Apr 28 10:46:16 2013 +0800
+
+    问题原因：产线部分手机耳机MIC检测电压不稳导致挂断键失效
+    解决方法：避免按键判断有误，修改阈值
+    评审人：杨善武
+
+commit a096f2520cc4186a37bc3194c9846813f99f38bc
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Sat Apr 27 09:41:34 2013 +0800
+
+    问题来源及描述:bug:触屏问题<1、大面积触摸乱报点；2、整机悬空两指无法操作>
+    
+    问题原因:1、供应商此部分代码没有合入，大于32mm面积就不再报点；2、悬空信号很低
+    解决方法：修改固件
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 57421732b177046461d50b125a5763e1f9cd6a8d
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Thu Apr 25 16:41:32 2013 +0800
+
+    问题原因: modify the power debug related file access mode
+    解决方法：change to 644
+    评审人:ou.hanfei
+    
+    ------------------------------------------------------------
+
+commit 42fdf96259aa6d15346e5806ef385e03e9106ff2
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Apr 25 08:49:19 2013 +0800
+
+    问题原因:1、Z5-mini第二TP方案——新思驱动；2、多驱动自适应；3、Z5 Z5-mini boot.img交叉烧写TP不可用
+    解决方法：1、添加驱动；2、将新思驱动放在前面加载，修改cypress驱动；3、修改版本比较部分代码
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit b3995754f3fc7745d6d9105933498a88b8210178
+Author: huang.hanhui <huang.hanhui@zte.com.cn>
+Date:   Fri Apr 19 10:50:29 2013 +0800
+
+    问题来源及描述:SW1ST00008643:<VPN无法连接>
+    
+    问题原因:VPN无法连接
+    解决方法：打开PPP配置选项
+    评审人:于庆
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubia_defconfig
+    	modified:   arch/arm/configs/apq8064-nubiamini_defconfig
+
+commit 54f6ec7239e1f1680ff1a2c98ee71c9aadf751c7
+Author: pengqin <peng.qin5@zte.com.cn>
+Date:   Tue Apr 23 13:44:04 2013 +0800
+
+    问题原因:WIFI 驱动引起死机问题
+    解决方法：更新驱动及相关组件
+    评审人:李松波
+    
+    ------------------------------------------------------------
+
+commit 49db65b045cf02da5d996acc513df13ac0966f1e
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Sat Apr 20 11:17:40 2013 +0800
+
+    A8064AAAAANLYA161032
+
+commit d8304dbf06cc34f2989118a5f9123545e5074ffc
+Merge: 9d47189 8b598de
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri Apr 19 15:56:32 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 9d471893c2d46c71fb75a0f42fab6ba16f6536a5
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri Apr 19 15:54:59 2013 +0800
+
+    问题来源及描述:bug:休眠唤醒时LCD黑屏问题
+    
+    问题原因:上电及掉电时序没有严格按着spec执行
+    解决方法：更改上电及掉电时序
+    评审人:从珊
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board/zte-display.c
+
+commit 8b598de83eeaa6644da238f0fb90d28c769da37c
+Merge: a3637d7 2ecbd70
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Apr 17 11:44:33 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit a3637d733e17f78234d84c17fede68bdff0fbb26
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Apr 17 11:42:44 2013 +0800
+
+    问题原因:Handset Crash due to "mipi_dsi_cmd_dma_tx: dma timeout error"
+    解决方法：change mipi_dsi_cmds_rx() to mipi_dsi_cmdlist_put()
+    评审人:congshan
+    
+    ------------------------------------------------------------
+
+commit 2ecbd7060e1f15281ff2fb519c08e6df508e6c9b
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Apr 15 20:20:21 2013 +0800
+
+    问题原因:横竖屏切换终端黑屏点不亮并且伴有蓝屏的问题
+    解决方法：mdp支持最小八分之一缩小，最大20倍放大，小于15倍时，增大mdp时钟，达到传输速率要求
+    评审人:tanyijun
+    
+    ------------------------------------------------------------
+
+commit 421fe0f662a6adf9ca2c20a72a44e51d7cf7296d
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Mon Apr 15 20:34:51 2013 +0800
+
+    问题原因:Cypress tp fw upgrade to ver:0103 for Z5 mini
+    解决方法：upgrade fw
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 07176bfc477f871313d2b045f6eeac52377bb976
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Mon Apr 15 11:22:39 2013 +0800
+
+    问题原因:long press pwk, no menu popup
+    解决方法：fix pwk debounce issue
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit fd21531965f2b10a3c7e0f673516c360e9fb84ac
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Sat Apr 13 14:39:10 2013 +0800
+
+    问题原因: add the clock dump method
+    解决方法：add the clock dump power debug method
+    评审人: ou.hanfei
+    
+    ------------------------------------------------------------
+
+commit b0d8e00789fce05e0cbfc6ffe38577b5e815d185
+Author: jinghongliang <jinghongliang@zte.com.cn>
+Date:   Fri Apr 12 15:12:42 2013 +0800
+
+    问题原因:前置摄像头OV5648不用外部DVDD(L29)供电
+    解决方法：去掉代码中关于DVDD的使能配置
+    评审人:沈小厚
+    
+    ------------------------------------------------------------
+
+commit ff510dfdfdafd4cd89ce9e433066fe781a470408
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Thu Apr 11 16:35:02 2013 +0800
+
+    问题原因:cypress TP FW 版本号16bit读取/判断
+    解决方法：从版本号高位开始读两个字节（为了让Z5-mini固件正常升级，先不用版本号高位）
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 4e27c0530ff691d7dfce3c64c1eb78766a46d256
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu Apr 11 15:42:30 2013 +0800
+
+    问题来源及描述:新增需求:
+    1.nubia添加红外接口宏控
+    2.nubia添加红外寄存器检查及log优化
+    
+    问题原因:
+    1.nubia添加红外接口宏控
+    2.nubia添加红外寄存器检查及log优化
+    解决方法：
+    1.nubia添加红外接口宏控
+    2.nubia添加红外寄存器检查及log优化
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit a265b1aea7a2d49599f49354dae2367f9f5190d8
+Merge: 90f6386 2560629
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu Apr 11 15:28:47 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 90f6386ae6d0050289bb2ce78c288d80339c6223
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Thu Apr 11 15:27:04 2013 +0800
+
+    问题来源及描述:新增需求:nubia-mini添加红外届接口宏控
+    
+    问题原因:nubia-mini添加红外届接口宏控
+    解决方法：nubia-mini添加红外届接口宏控
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 25606292232ed592156e4ad829d78988f413a635
+Merge: 804f101 f808f1e
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Apr 11 11:33:01 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 804f101652985bbe2f396805b53015344b4610d2
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Apr 11 11:31:54 2013 +0800
+
+    问题来源及描述:bug:PWM频率过高
+    
+    问题原因:将PWM频率调低
+    解决方法：将PWM频率调低
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+
+commit f808f1e985c1629a56b6d113ffcee2347e365199
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed Apr 10 19:42:12 2013 +0800
+
+    问题来源及描述:新增需求:支持非标准充电器
+    
+    问题原因:支持非标准充电器
+    解决方法：支持非标准充电器
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 4ea2d423a5590b26c0e82f28f2919b1504b37a79
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed Apr 10 19:05:10 2013 +0800
+
+    问题来源及描述:新增需求:增加GPIO识别硬件版本
+    
+    问题原因:通过GPIO识别硬件版本
+    解决方法：增加GPIO识别硬件版本
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit 67c7648bc5840187dba855e0f6ccae11c0bf1b86
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Wed Apr 10 17:34:31 2013 +0800
+
+    问题来源及描述:新增需求:添加nubia工程模式红外测试文件接口
+    
+    问题原因:添加nubia工程模式红外测试文件接口
+    解决方法：添加nubia工程模式红外测试文件接口
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 20d8e0cd1d95425c11fe873177d701885428bc4e
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Wed Apr 10 16:58:09 2013 +0800
+
+    问题来源及描述:新增需求:
+                            1.nubia-mini添加红外拨号自动校准
+    			2.添加文件接口使nubia-mini与nubia工程模式红外测试一致
+    			3.优化nubia-mini红外打印log
+    
+    问题原因:
+    1.nubia-mini添加红外拨号自动校准
+    2.添加文件接口使nubia-mini与nubia工程模式红外测试一致
+    3.优化nubia-mini红外打印log
+    
+    解决方法：
+    1.nubia-mini添加红外拨号自动校准
+    2.添加文件接口使nubia-mini与nubia工程模式红外测试一致
+    3.优化nubia-mini红外打印log
+    
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 91e73c94d391e6900b6bc2c67645f2334ec5d094
+Merge: b039641 34acd37
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Apr 10 16:21:34 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit b039641ea809cb0e33dc7396390bb4e0bdd8599c
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Apr 10 16:19:19 2013 +0800
+
+    问题原因:kpd backlight brightness can't be adjusted
+    解决方法：allow the brightness value to be passed to the led driver directly
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit 34acd372123d394ccfad37c12784dc7f071b9553
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Wed Apr 10 15:50:50 2013 +0800
+
+    问题来源及描述:bug:<Z5-mini TP cypress 固件升级失败>
+    
+    问题原因:固件升级校验过程中，被中断。有可能是固件本身的原因
+    解决方法：当检测到IRQ mode 为0XFF  退出cyttsp4_irq
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/input/touchscreen/cypress/cyttsp4_core.c
+
+commit 2477634aa96f595a1b3c62af676b4a99b56d6576
+Merge: 41382e1 2b98178
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Wed Apr 10 15:32:43 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into master161030
+    
+    Conflicts:
+    	drivers/power/Kconfig
+
+commit 41382e1d451a099144381f67f077b31cc16aee35
+Author: guo.jialiang_c <guo.jialiang_c@gsv.com>
+Date:   Wed Apr 10 15:12:52 2013 +0800
+
+    问题原因: add the power debug founction in 30 baseline
+    解决方法：add the power debug related code
+    评审人:ou.hanfei
+    
+    ------------------------------------------------------------
+
+commit 2b98178dc2c49f62d0df89f7f0be0df5af712b94
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Apr 10 14:53:16 2013 +0800
+
+    问题原因:Implement of interface for abnormal/normal boot
+    解决方法：app can read /sys/ztemt_boot_status/boot_status to enable/disable power on ring
+    		1: normal boot
+    		0: abnormal boot
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit 33660c18b0d1ce9f5666b1ee37b81580bbd6ce6b
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Apr 9 11:20:01 2013 +0800
+
+    问题原因:Cypress TP FW upgrade fail
+    解决方法：change the MODE_CHANGE_TIMEOUT time
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit efe6b0406a7420081e88741904e70a00309269ac
+Author: jinghongliang <jinghongliang@zte.com.cn>
+Date:   Tue Apr 9 11:04:02 2013 +0800
+
+    问题原因:Z5MINI 前置摄像头由于DVDD没有关掉，有漏电现象
+    解决方法：关掉前置摄像头的L29（DVDD）电源
+    评审人:沈小厚
+    
+    ------------------------------------------------------------
+
+commit 016594598b35b1e62ba10c879ab645340dc031eb
+Merge: 81d6f1c 33296d2
+Author: zhangliang <zhangliang@gsv.com>
+Date:   Mon Apr 8 17:19:46 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 81d6f1c5f583f2c576980551b36fb1926b198ac8
+Author: zhangliang <zhangliang@gsv.com>
+Date:   Mon Apr 8 17:02:11 2013 +0800
+
+    问题原因:移植Z5mini前置摄像头驱动，增加后置摄像头对焦
+    解决方法:移植Z5mini前置摄像头驱动，增加后置摄像头对焦
+    评审人:井洪亮
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini_defconfig
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+    	modified:   drivers/media/video/msm/Kconfig
+    	modified:   drivers/media/video/msm/sensors/Makefile
+    	new file:   drivers/media/video/msm/sensors/ov5648.c
+
+commit 33296d22510802e3f3e874f2d903efae083d35ac
+Author: majianjiang <ma.jianjiang@zte.com.cn>
+Date:   Mon Apr 8 16:25:41 2013 +0800
+
+    问题来源及描述:新增需求:<4.2平台蓝牙找寻器移植优化初始化速度>
+    
+    问题原因: 4.2平台移植蓝牙找寻器
+    解决方法：改变两个参数的默认值
+    评审人: 易晓柯
+    
+    ------------------------------------------------------------
+    
+    	modified:   include/net/bluetooth/bluetooth.h
+
+commit 736c5dfa98b040617d71a9c66cb4419c8da3b9c0
+Merge: 77e3a9e 9723580
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon Apr 8 14:03:23 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 77e3a9e052fecc9c20ee204f2340375d6fdc5d6c
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Mon Apr 8 14:01:42 2013 +0800
+
+    问题来源及描述:bug:Z5mini部分LCD有抖动问题
+    
+    问题原因:LCD VBP设置不当
+    解决方法：修改Z5mini LCD VBP
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+
+commit 9723580a4dc188bd4346ec7a4f449503474b0bee
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Mon Apr 8 13:54:58 2013 +0800
+
+    问题原因:z5打电话不亮屏
+    解决方法：点背光之前加50ms延时
+    评审人:mayu
+    
+    ------------------------------------------------------------
+
+commit 6fa808bf97cd322bb7327433bcb300504d0a1e56
+Merge: 68e9847 c6f174f
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Sun Apr 7 11:16:37 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 68e98471fb8f874ea94f6b0c21d8242b2eac0d53
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Sun Apr 7 11:15:13 2013 +0800
+
+    问题来源及描述:bug:屏幕底部显示有花边
+    
+    问题原因:VFP设置不当
+    解决方法：更改VFP设置
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+
+commit c6f174fe1308881af0e884f714b982576686d2a9
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Sun Apr 7 09:31:27 2013 +0800
+
+    问题原因:Z5 boot.img下载到Z5-mini手机中，固件升级为Z5 FW，使得触屏不可用
+    解决方法：版本号相差大于5，则不升级（临时解决方案）
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit e12f24ad1c62b98551b5d98a107d49154ba12420
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Wed Apr 3 16:17:08 2013 +0800
+
+    A8064AAAAANLYA161031
+
+commit 15d09c2d00c9621a8beb0644cdfff79318793dd7
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Wed Apr 3 10:52:08 2013 +0800
+
+    问题原因：欧美标耳机检测识别
+    解决方法：控制GPIO-57检测
+    评审人：张圣杰
+    	modified:   sound/soc/codecs/wcd9310.c
+
+commit 99a3257c73f4b7b43be88cc83c48bd6a5b7b356f
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Wed Apr 3 10:32:45 2013 +0800
+
+    Revert "问题原因：欧美标耳机兼容识别"
+    
+    This reverts commit 8f7722fa3111b19643cd0dfb2867eeb99c34fbfa.
+
+commit 8f7722fa3111b19643cd0dfb2867eeb99c34fbfa
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Wed Apr 3 10:26:44 2013 +0800
+
+    问题原因：欧美标耳机兼容识别
+    解决方法：控制GPIO-57口进行检测
+    评审人：张圣杰
+    	modified:   sound/soc/codecs/wcd9310.c
+
+commit 1e84fd4a8238fb5921d4c87d7059c93a4c8975e2
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Wed Apr 3 09:10:44 2013 +0800
+
+    问题来源及描述:新增需求:增加Z5mini呼吸灯宏控
+    
+    问题原因:增加Z5mini呼吸灯宏控
+    解决方法：增加Z5mini呼吸灯宏控
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 15c19517ec60cc457a0f1ebf4935e7f2a2315812
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Tue Apr 2 15:28:58 2013 +0800
+
+    Revert "问题原因：欧美标耳机兼容"
+    
+    This reverts commit 794bbbf01fa5c31e4562e5c14128d476b1825044.
+    
+    Conflicts:
+    
+    	sound/soc/codecs/wcd9310.c
+
+commit 310d77717fa8f6d647a560117472470d89626187
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Tue Apr 2 11:27:10 2013 +0800
+
+    问题原因：添加ZTEMT_AUDIO_Z5MINI项目宏
+    解决方法：添加ZTEMT_AUDIO_Z5MINI项目宏
+    评审人：张圣杰
+    	modified:   arch/arm/configs/apq8064-nubiamini_defconfig
+    	modified:   arch/arm/mach-msm/Kconfig
+
+commit 0876d9c7f6f62c090e3114c6859cf710a46ba65e
+Author: luochangyang <luo.changyang@zte.com.cn>
+Date:   Tue Apr 2 08:40:56 2013 +0800
+
+    问题原因:nubia mini cypress TP firmware upgrade for test
+    解决方法：nubia mini cypress TP firmware upgrade for test
+    评审人:liuyongfeng
+    
+    ------------------------------------------------------------
+
+commit 6ea5f73b692dde568786a1ad0dcb5870dff4bda1
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Mon Apr 1 15:56:31 2013 +0800
+
+    问题来源及描述:添加 mini 气压计调试log
+    
+    问题原因:添加 mini 气压计调试log
+    解决方法：添加 mini 气压计调试log
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit a804a8ea8aa7d6bd349efd96be5016169ab0ff43
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Mon Apr 1 15:52:38 2013 +0800
+
+    问题来源及描述:针对mini 4.7 inch面部样机优化tmd2772红外校准参数
+    
+    问题原因:针对mini 4.7 inch面部样机优化tmd2772红外校准参数
+    解决方法：针对mini 4.7 inch面部样机优化tmd2772红外校准参数
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit ed1af1958d1937c50d2700a140869a23aec7d9f0
+Merge: fa58989 fd41fd5
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Sun Mar 31 14:26:28 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit fa5898935b9158ce4e81f33d144481f663e2c298
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Sun Mar 31 14:24:37 2013 +0800
+
+    问题原因:add Cypress TMA463 FW V11 for NX5xx
+    解决方法：add cyttsp4_5inch_otg_gw_fw.bin
+    评审人:luochangyang
+    
+    ------------------------------------------------------------
+
+commit fd41fd5a02c4c411681cc41bb131afe428032877
+Author: yecunkui <ye.cunkui@zte.com.cn>
+Date:   Fri Mar 29 18:27:18 2013 +0800
+
+    问题来源及描述:新增需求:<Modify the modem DUN rate>
+    
+    问题原因:Modify the modem DUN rate
+    解决方法:Display the rate according to current RF mode
+    评审人:Wang.Shujun
+    
+    ------------------------------------------------------------
+
+commit b5bad029fc8623b6fa592b0062967e6f6a6efb14
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Mar 29 17:04:32 2013 +0800
+
+    问题来源及描述:新增需求:优化呼吸灯初始化代码
+    
+    问题原因:优化呼吸灯初始化代码
+    解决方法：优化呼吸灯初始化代码
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit fb58841b7d659501edc92becab43a4a6af19630d
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Mar 29 16:52:08 2013 +0800
+
+    问题来源及描述:新增需求:优化呼吸灯代码
+    
+    问题原因:优化呼吸灯代码
+    解决方法：呼吸灯单独注册led设备
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit 63dce1c0251cc21c753bdf033decfb11bceb1e54
+Merge: 38de601 fdfc4a5
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri Mar 29 14:28:07 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 38de601987545f05f669e00393a484afca80d66e
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Fri Mar 29 14:26:34 2013 +0800
+
+    问题来源及描述:新增需求:nubia mini LCD代码整理及CE功能添加
+    
+    问题原因:修改代码及增加CE功能
+    解决方法：修改代码及增加CE功能
+    评审人:马雨
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   drivers/video/msm/mdp.c
+    	modified:   drivers/video/msm/mdp4.h
+    	modified:   drivers/video/msm/mdp4_overlay.c
+    	modified:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+
+commit fdfc4a5c2bd23bf9dd9dcaf7921f05cd75ee1027
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Thu Mar 28 18:54:38 2013 +0800
+
+    问题原因：欧美标检测口gpio-57延时过长
+    解决方法：gpio-57拉高后延时缩短
+    评审人：伍智明
+
+commit 9c189f1fef8750c45c984c594a084fa73b1d700e
+Author: tanyijun <tan.yijun@zte.com.cn>
+Date:   Thu Mar 28 16:09:28 2013 +0800
+
+    问题来源及描述:新增需求:<需求描述>add 4.7' LCD driver for nubia mini
+    
+    问题原因:add driver
+    解决方法：add driver
+    评审人:mayu
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubiamini_defconfig
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-display.c
+    	modified:   drivers/video/msm/Kconfig
+    	modified:   drivers/video/msm/Makefile
+    	new file:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.c
+    	new file:   drivers/video/msm/mipi_zte_sharp_video_720p_nt35590.h
+    	new file:   drivers/video/msm/mipi_zte_sharp_video_720p_r63415.c
+    	new file:   drivers/video/msm/mipi_zte_sharp_video_720p_r63415.h
+    	new file:   drivers/video/msm/mipi_zte_z5mini_lcd.c
+    	new file:   drivers/video/msm/mipi_zte_z5mini_lcd.h
+
+commit 92abf41859169947900e8c4e12243d89a9b9216c
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Mar 28 10:29:57 2013 +0800
+
+    问题原因:Enable Cyttsp4 device access
+    解决方法：config kernelconfig
+    评审人:gongmin
+    
+    ------------------------------------------------------------
+
+commit e39e272080dc2ee475f7beed6963fa86f902bc26
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed Mar 27 19:10:26 2013 +0800
+
+    问题原因:nx502会有蓝屏问题
+    解决方法：更改带宽
+    评审人:wangshuai
+    
+    ------------------------------------------------------------
+
+commit ce9b92919e8c893052e05ba18ebce0d05af79e28
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Wed Mar 27 17:45:37 2013 +0800
+
+    问题来源及描述:新增需求:<two storage disk>
+    
+    问题原因:add config for two lun
+    解决方法：add 3 lun the lun[3]/name:LUN0 was cdrom
+    评审人:wangshujun
+    
+    ------------------------------------------------------------
+
+commit 1aa894d3f3aec8af0983d1b38834fc59942dec2d
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Wed Mar 27 16:52:25 2013 +0800
+
+    问题原因:添加mini sensor驱动
+    解决方法：添加mini sensor驱动
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit dd20549f3fd28928be9565937bf8d39897560287
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Tue Mar 26 20:17:03 2013 +0800
+
+    问题原因:add key button led driver
+    解决方法：add key button led
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit 22730b6a90441a1a6bccd804027d59f656169948
+Author: yecunkui <ye.cunkui@zte.com.cn>
+Date:   Tue Mar 26 16:26:18 2013 +0800
+
+    问题来源及描述:新增需求:Delete a useless file committed because of carelessness
+    
+    问题原因:A useless file was committed because of carelessness
+    解决方法:Just delete it!
+    评审人:Wang.Shujun
+    
+    ------------------------------------------------------------
+
+commit 8e638e73d7ddf2b3826b0c83b0fe376de5ee8ee2
+Author: yecunkui <ye.cunkui@zte.com.cn>
+Date:   Tue Mar 26 16:13:12 2013 +0800
+
+    问题来源及描述:新增需求:Add another USB channel for docking connect
+    
+    问题原因:Add USB Host3 channel
+    解决方法:Add USB Host3 channel
+    评审人:Wang.Shujun & Li.Chunliang
+    
+    ------------------------------------------------------------
+
+commit 794bbbf01fa5c31e4562e5c14128d476b1825044
+Author: sunli <sun.li20@zte.com.cn>
+Date:   Mon Mar 25 18:34:10 2013 +0800
+
+    问题原因：欧美标耳机兼容
+    解决方法：GPIO_57检测
+    评审人：伍智明
+
+commit dd7af2f9805c15371428d31668f7e60a717c1447
+Merge: 5ef68db 7774b09
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Mon Mar 25 17:15:24 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit 5ef68db3035e98b5f74a6b262c0d7877a2a635d1
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Mon Mar 25 17:12:49 2013 +0800
+
+    问题原因:添加 项目区分宏控
+    解决方法：添加 项目区分宏控
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 7774b0937adb6cf6dacd72d7bbbda093812dab7f
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Mon Mar 25 16:29:25 2013 +0800
+
+    问题来源及描述:新增需求:<add CDROM_AUTORUN>
+    
+    问题原因:add cdrom_autorun
+    解决方法：add code
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit c2a8e84d61e0cc27a238497147f80c71bafdfdec
+Author: helei <helei@zte.com.cn>
+Date:   Mon Mar 25 15:25:13 2013 +0800
+
+    问题原因:z5MINI增加相机按键
+    解决方法：增加gpio映射
+    评审人:刘永锋
+    
+    ------------------------------------------------------------
+
+commit b86a2151421cde23d2b4d4c30554d9d08c164175
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Mon Mar 25 10:33:36 2013 +0800
+
+    问题原因:Create nubiamini vendor
+    解决方法：add apq8064-nubiamini_defconfig
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit ab90bf5773569cc477d9882dfc476d80bfc2004c
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Tue Mar 12 15:38:18 2013 +0800
+
+    问题原因:add continuous display for nx502
+    解决方法：add display driver
+    评审人:jinghongliang
+    
+    ------------------------------------------------------------
+
+commit a07bdb0ff9209b6c913bfacc19cf2de2d680edc6
+Author: tianhong <tian.hong6@zte.com.cn>
+Date:   Sat Mar 23 16:12:53 2013 +0800
+
+    问题来源及描述:添加 i2c-2 红外接近传感器，环境光线传感器，加速度传感器，地磁传感器，陀螺仪，马达等驱动
+    
+    问题原因:添加 i2c-2 红外接近传感器，环境光线传感器，加速度传感器，地磁传感器，陀螺仪，马达等驱动
+    解决方法：添加 i2c-2 红外接近传感器，环境光线传感器，加速度传感器，地磁传感器，陀螺仪，马达等驱动
+    评审人:朱冰
+    
+    ------------------------------------------------------------
+
+commit 44e107f9939e373d0aba6387b30cb6a1fe0b12d8
+Author: zhang.shengjie <zhang.shengjie@zte.com.cn>
+Date:   Fri Mar 22 19:01:26 2013 +0800
+
+    问题原因:merged ztemt audio changes for new baseline
+    解决方法：merged ztemt audio changes for new baseline
+    评审人:wu.zhiming
+    
+    ------------------------------------------------------------
+
+commit 1cb71ecdda4ee8060fd2cc2a158e60a27f4b93e9
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Fri Mar 22 18:15:48 2013 +0800
+
+    问题来源及描述:新增需求:增加呼吸灯功能
+    
+    问题原因：增加呼吸灯功能
+    解决方法：合入呼吸灯驱动代码
+    评审人:郭佳良
+    
+    ------------------------------------------------------------
+
+commit a75d4ef7c540270417111daebe70f7b99540ba59
+Author: mahuixian <ma.huixian1@zte.com.cn>
+Date:   Fri Mar 22 10:34:00 2013 +0800
+
+    问题来源及描述:新增需求:<需求描述>
+    
+    问题原因:add noauth riva part
+    解决方法：add noauth riva part
+    评审人:gongmin
+    
+    ------------------------------------------------------------
+
+commit 903171686c53c5f1aeeca4e232d798ee2704a89d
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Mar 21 20:07:10 2013 +0800
+
+    问题来源及描述:新增需求:合入硬件版本识别功能
+    
+    问题原因:合入硬件版本识别功能
+    解决方法：合入硬件版本识别功能
+    评审人:洪丹龙
+    
+    ------------------------------------------------------------
+
+commit e5de5453c17a29fff75aac3d46aa78387b20ea6f
+Author: wang.shuai <wang.shuai12@zte.com.cn>
+Date:   Thu Mar 21 19:38:43 2013 +0800
+
+    问题来源及描述:新增需求:合入充电模块相关修改
+    
+    问题原因:升级基线合入充电模块相关修改
+    解决方法：合入充电模块相关修改
+    评审人:洪丹龙
+    
+    ------------------------------------------------------------
+
+commit 142c0b28369acb8a3502670ee877ae32826f9ba4
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Mar 21 16:06:48 2013 +0800
+
+    问题原因:send cmd to reset modem
+    解决方法：add interface to make ap perform reset
+    评审人:hejian
+    
+    ------------------------------------------------------------
+
+commit 3ae56041be9b46afcf19aaad7e6cebfb67362469
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Thu Mar 21 15:35:32 2013 +0800
+
+    问题原因:Implement of UART driver
+    解决方法：add uart driver
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit b861ce005b807a16ee700729375033f7d87a153a
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Thu Mar 21 13:49:25 2013 +0800
+
+    问题来源及描述:bug:<add nfc function>
+    
+    问题原因:add nfc functions
+    解决方法：add code
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 2bf1b842698052ba824b2a44987e11619ef635bc
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Thu Mar 21 10:33:33 2013 +0800
+
+    问题原因:add mhl driver
+    解决方法：add driver
+    评审人:jinghongliang
+    
+    ------------------------------------------------------------
+
+commit a077095603530b986c138dacae2ed0946f59af9c
+Author: shenxiaohou <shen.xiaohou@zte.com.cn>
+Date:   Thu Mar 21 11:09:02 2013 +0800
+
+    问题来源及描述:新增需求:<move Z5 camera driver to 4.2 CS baseline>
+    
+    问题原因:add camera driver to 4.2 CS baseline
+    解决方法：move Z5 camera driver to 4.2 CS baseline
+    评审人:[jin.hongliang]
+    
+    ------------------------------------------------------------
+    
+    	modified:   arch/arm/configs/apq8064-nubia_defconfig
+    	modified:   arch/arm/mach-msm/board-8064-regulator.c
+    	modified:   arch/arm/mach-msm/board/zte-camera.c
+    	modified:   arch/arm/mach-msm/clock-8960.c
+    	modified:   arch/arm/mach-msm/include/mach/board.h
+    	modified:   drivers/media/video/msm/Kconfig
+    	modified:   drivers/media/video/msm/csi/msm_csid.c
+    	modified:   drivers/media/video/msm/flash.c
+    	modified:   drivers/media/video/msm/io/msm_camera_i2c.c
+    	modified:   drivers/media/video/msm/sensors/Makefile
+    	new file:   drivers/media/video/msm/sensors/imx132.c
+
+commit 03c6dd516c643d5a4657f79a343177b1617d203a
+Author: chengdongsheng <chengdongsheng@gsv.com>
+Date:   Wed Mar 20 19:09:14 2013 +0800
+
+    问题来源及描述:bug:<set the pid for dload mode>
+    
+    问题原因:sent the pid(0xffc0) to dload
+    解决方法：just sent the default pid
+    评审人:lichunliang
+    
+    ------------------------------------------------------------
+
+commit 8dc9f39b26cc7c1d4e2816e98bc2b15e6a55f47e
+Merge: e36f8ab d9f8420
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Mar 20 16:32:19 2013 +0800
+
+    Merge branch 'zte/master161030' of 192.168.2.25:repo/8064F3161a/qcom/kernel into mywork
+
+commit e36f8ab025c9bfe455771b93a39250eec273e7c9
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Mar 20 16:30:54 2013 +0800
+
+    问题原因:Implement of Cypress TMA463 driver
+    解决方法：add new driver
+    评审人:gongmin
+    
+    ------------------------------------------------------------
+
+commit d9f842081ea892418ab1b9c650006da6f0467150
+Author: cong.shan_i <cong.shan_i@gsv.com>
+Date:   Wed Mar 20 15:04:29 2013 +0800
+
+    问题原因:add lcd driver for nubia
+    解决方法：add driver
+    评审人:shenxiaohou
+    
+    ------------------------------------------------------------
+    
+    Conflicts:
+    
+    	drivers/video/msm/mdp.c
+
+commit 374048cd6e6d65300a15de291e9f6e787b1fb222
+Author: liu.yongfeng_e <liu.yongfeng_e@gsv.com>
+Date:   Wed Mar 20 13:23:37 2013 +0800
+
+    问题原因:Create board for nubia
+    解决方法：add nubia board
+    评审人:wangquan
+    
+    ------------------------------------------------------------
+
+commit b348f53a2b19215df0f6940ebffb1ce430d01137
+Author: zhangfan <zhangfan@ztemt.cn>
+Date:   Tue Mar 19 13:24:34 2013 +0800
+
+    A8064AAAAANLYA161030
+
+commit 9b9396f4b726c1ff925026e81a258d88221334a8
+Author: zhangfan <zhangfan@ztemt.com.cn>
+Date:   Mon Feb 18 16:40:25 2013 +0800
+
+    F8064AAAAANLYD161022
+
+commit 32d2de7cd8d5c8f81a9800cede521e01a57bfeee
+Author: zhangfan <zhangfan@ztemt.com.cn>
+Date:   Tue Jan 29 11:56:56 2013 +0800
+
+    the first commit for qcom baseline 161012
+
+commit 8f40fc2edb8735678685649e02809fe1494164a2
+Author: zhwang <wang.zhihui16@zte.com.cn>
+Date:   Tue Sep 11 15:37:29 2012 +0800
+
+    example test git
+    
+    问题原因:
+    解决方法：
+    评审人:
+    
+    ------------------------------------------------------------
