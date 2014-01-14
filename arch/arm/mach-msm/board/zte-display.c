@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -295,7 +295,7 @@ static struct msm_panel_common_pdata mdp_pdata = {
 	.mdp_bw_ib_factor = 215,
 #else
 	.mdp_bw_ab_factor = 115,
-	.mdp_bw_ib_factor = 125,
+	.mdp_bw_ib_factor = 150,
 #endif
 	.mdp_bus_scale_table = &mdp_bus_scale_pdata,
 	.mdp_rev = MDP_REV_44,
@@ -330,6 +330,9 @@ void __init apq8064_mdp_writeback(struct memtype_reserve* reserve_table)
 		mdp_pdata.ov0_wb_size;
 	reserve_table[mdp_pdata.mem_hid].size +=
 		mdp_pdata.ov1_wb_size;
+
+	pr_info("mem_map: mdp reserved with size 0x%lx in pool\n",
+			mdp_pdata.ov0_wb_size + mdp_pdata.ov1_wb_size);
 #endif
 }
 

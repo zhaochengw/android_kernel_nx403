@@ -25,8 +25,8 @@
 
 #define RMNET_DATA_LEN			2000
 #define RMNET_HEADROOM_W_MUX		(sizeof(struct mux_hdr) + \
-					sizeof(struct QMI_QOS_HDR_S))
-#define RMNET_HEADROOM			sizeof(struct QMI_QOS_HDR_S)
+					sizeof(struct QMI_QOS_ALIGNED_HDR_S))
+#define RMNET_HEADROOM			sizeof(struct QMI_QOS_ALIGNED_HDR_S)
 #define RMNET_TAILROOM			MAX_PAD_BYTES(4);
 
 static unsigned int no_rmnet_devs = 1;
@@ -324,10 +324,22 @@ static int rmnet_usb_data_dmux(struct sk_buff *skb,  struct urb *rx_urb)
 	return mux_id - 1;
 }
 
-static void rmnet_usb_data_mux(struct sk_buff *skb, unsigned int id)
+static struct sk_buff *rmnet_usb_data_mux(struct sk_buff *skb, unsigned int id)
 {
 	struct	mux_hdr *hdr;
 	size_t	len;
+	struct sk_buff *new_skb;
+
+	if ((skb->len & 0x3) && (skb_tailroom(skb) < (4 - (skb->len & 0x3)))) {
+		new_skb = skb_copy_expand(skb, skb_headroom(skb),
+					  4 - (skb->len & 0x3), GFP_ATOMIC);
+		dev_kfree_skb_any(skb);
+		if (new_skb == NULL) {
+			pr_err("%s: cannot allocate skb\n", __func__);
+			return NULL;
+		}
+		skb = new_skb;
+	}
 
 	hdr = (struct mux_hdr *)skb_push(skb, sizeof(struct mux_hdr));
 	hdr->mux_id = id + 1;
@@ -338,6 +350,8 @@ static void rmnet_usb_data_mux(struct sk_buff *skb, unsigned int id)
 
 	hdr->pkt_len_w_padding = cpu_to_le16(skb->len - sizeof(struct mux_hdr));
 	hdr->padding_info = (ALIGN(len, 4) - len) << MUX_PAD_SHIFT;
+
+	return skb;
 }
 
 static struct sk_buff *rmnet_usb_tx_fixup(struct usbnet *dev,
@@ -346,18 +360,25 @@ static struct sk_buff *rmnet_usb_tx_fixup(struct usbnet *dev,
 	struct QMI_QOS_HDR_S	*qmih;
 
 	if (test_bit(RMNET_MODE_QOS, &dev->data[0])) {
-		qmih = (struct QMI_QOS_HDR_S *)
-		skb_push(skb, sizeof(struct QMI_QOS_HDR_S));
+		if (test_bit(RMNET_MODE_ALIGNED_QOS, &dev->data[0])) {
+			qmih = (struct QMI_QOS_HDR_S *)
+			skb_push(skb, sizeof(struct QMI_QOS_ALIGNED_HDR_S));
+		} else {
+			qmih = (struct QMI_QOS_HDR_S *)
+			skb_push(skb, sizeof(struct QMI_QOS_HDR_S));
+		}
 		qmih->version = 1;
 		qmih->flags = 0;
 		qmih->flow_id = skb->mark;
 	 }
 
 	if (dev->data[4])
-		rmnet_usb_data_mux(skb, dev->data[3]);
+		skb = rmnet_usb_data_mux(skb, dev->data[3]);
 
-	DBG1("[%s] Tx packet #%lu len=%d mark=0x%x\n",
-	    dev->net->name, dev->net->stats.tx_packets, skb->len, skb->mark);
+	if (skb)
+		DBG1("[%s] Tx packet #%lu len=%d mark=0x%x\n",
+			dev->net->name, dev->net->stats.tx_packets,
+			skb->len, skb->mark);
 
 	return skb;
 }
@@ -522,6 +543,12 @@ static int rmnet_ioctl(struct net_device *dev, struct ifreq *ifr, int cmd)
 						| RMNET_MODE_LLP_IP));
 		break;
 
+	case RMNET_IOCTL_SET_ALIGNED_QOS_ENABLE:  /* Set QoS Aligned header */
+		set_bit(RMNET_MODE_ALIGNED_QOS, &unet->data[0]);
+		DBG0("[%s] rmnet_ioctl(): set QMI QOS Aligned header enable\n",
+				dev->name);
+		break;
+
 	case RMNET_IOCTL_SET_QOS_ENABLE:	/* Set QoS header enabled*/
 		set_bit(RMNET_MODE_QOS, &unet->data[0]);
 		DBG0("[%s] rmnet_ioctl(): set QMI QOS header enable\n",
@@ -681,6 +708,7 @@ static int rmnet_usb_probe(struct usb_interface *iface,
 	int			status = 0;
 	unsigned int		i, unet_id, rdev_cnt, n = 0;
 	bool			mux;
+	struct rmnet_ctrl_dev	*dev;
 
 	udev = interface_to_usbdev(iface);
 
@@ -729,8 +757,7 @@ static int rmnet_usb_probe(struct usb_interface *iface,
 		status = device_create_file(&unet->net->dev,
 				&dev_attr_dbg_mask);
 		if (status) {
-			free_netdev(unet->net);
-			usb_put_dev(udev);
+			usbnet_disconnect(iface);
 			goto out;
 		}
 
@@ -738,8 +765,7 @@ static int rmnet_usb_probe(struct usb_interface *iface,
 				&unet->data[1]);
 		if (status) {
 			device_remove_file(&unet->net->dev, &dev_attr_dbg_mask);
-			free_netdev(unet->net);
-			usb_put_dev(udev);
+			usbnet_disconnect(iface);
 			goto out;
 		}
 
@@ -765,13 +791,17 @@ static int rmnet_usb_probe(struct usb_interface *iface,
 
 out:
 	for (i = 0; i < n; i++) {
+		/* This cleanup happens only for MUX case */
 		unet_id = i + info->data * no_rmnet_insts_per_dev;
-		rmnet_usb_ctrl_cleanup(
-			(struct rmnet_ctrl_dev *)unet_list[unet_id]->data[1]);
-		device_remove_file(&unet_list[unet_id]->net->dev,
-				&dev_attr_dbg_mask);
-		free_netdev(unet_list[unet_id]->net);
-		usb_put_dev(udev);
+		unet = unet_list[unet_id];
+		dev = (struct rmnet_ctrl_dev *)unet->data[1];
+
+		rmnet_usb_data_debugfs_cleanup(unet);
+		rmnet_usb_ctrl_disconnect(dev);
+		device_remove_file(&unet->net->dev, &dev_attr_dbg_mask);
+		usb_set_intfdata(iface, unet_list[unet_id]);
+		usbnet_disconnect(iface);
+		unet_list[unet_id] = NULL;
 	}
 
 	return status;
@@ -782,15 +812,16 @@ static void rmnet_usb_disconnect(struct usb_interface *intf)
 	struct usbnet		*unet = usb_get_intfdata(intf);
 	struct rmnet_ctrl_dev	*dev;
 	unsigned int		n, rdev_cnt, unet_id;
+	struct driver_info	*info = unet->driver_info;
+	bool			mux = unet->data[4];
 
-	rdev_cnt = unet->data[4] ? no_rmnet_insts_per_dev : 1;
+	rdev_cnt = mux ? no_rmnet_insts_per_dev : 1;
 
 	device_set_wakeup_enable(&unet->udev->dev, 0);
 
 	for (n = 0; n < rdev_cnt; n++) {
-		unet_id = n + unet->driver_info->data * no_rmnet_insts_per_dev;
-		unet =
-		unet->data[4] ? unet_list[unet_id] : usb_get_intfdata(intf);
+		unet_id = n + info->data * no_rmnet_insts_per_dev;
+		unet = mux ? unet_list[unet_id] : usb_get_intfdata(intf);
 		device_remove_file(&unet->net->dev, &dev_attr_dbg_mask);
 
 		dev = (struct rmnet_ctrl_dev *)unet->data[1];
@@ -874,6 +905,9 @@ static const struct usb_device_id vidpids[] = {
 	},
 	{ USB_DEVICE_INTERFACE_NUMBER(0x05c6, 0x9079, 8),
 	.driver_info = (unsigned long)&rmnet_usb_info,
+	},
+	{ USB_DEVICE_INTERFACE_NUMBER(0x05c6, 0x908A, 6), /*mux over hsic mdm*/
+	.driver_info = (unsigned long)&rmnet_info,
 	},
 
 	{ }, /* Terminating entry */

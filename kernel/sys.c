@@ -422,7 +422,6 @@ EXPORT_SYMBOL_GPL(kernel_halt);
  *
  *	Shutdown everything and perform a clean system power_off.
  */
-
 void kernel_power_off(void)
 {
 	kernel_shutdown_prepare(SYSTEM_POWER_OFF);

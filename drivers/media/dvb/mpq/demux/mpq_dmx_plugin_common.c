@@ -3426,7 +3426,6 @@ int mpq_sdmx_close_session(struct mpq_demux *mpq_demux)
 		if (status != SDMX_SUCCESS) {
 			MPQ_DVB_ERR_PRINT("%s: sdmx_close_session failed %d\n",
 				__func__, status);
-			return -EINVAL;
 		}
 		mpq_demux->sdmx_session_handle = SDMX_INVALID_SESSION_HANDLE;
 	}
@@ -3673,8 +3672,7 @@ static int mpq_sdmx_filter_setup(struct mpq_demux *mpq_demux,
 			MPQ_DVB_ERR_PRINT(
 				"%s: FAILED to set key ladder, ret=%d\n",
 				__func__, ret);
-			ret = -ENODEV;
-			goto end;
+			ret = 0;
 		}
 	}
 
@@ -4123,11 +4121,13 @@ static void mpq_sdmx_pes_filter_results(struct mpq_demux *mpq_demux,
 		pes_event.pes_end.start_gap = 0;
 		pes_event.data_length = 0;
 
-		/* Parse error indicators - TODO: these should be per filter */
+		/* Parse error indicators */
 		if (sts->error_indicators & SDMX_FILTER_ERR_INVALID_PES_LEN)
 			pes_event.pes_end.pes_length_mismatch = 1;
-		if (sts->error_indicators & SDMX_FILTER_ERR_CONT_CNT_INVALID)
-			pes_event.pes_end.disc_indicator_set = 0;
+		else
+			pes_event.pes_end.pes_length_mismatch = 0;
+
+		pes_event.pes_end.disc_indicator_set = 0;
 
 		pes_event.pes_end.stc = 0;
 		pes_event.pes_end.tei_counter = counters.transport_err_count;
@@ -4489,10 +4489,12 @@ static void mpq_sdmx_process_results(struct mpq_demux *mpq_demux)
 {
 	int i;
 	int j;
+	int sdmx_filters;
 	struct sdmx_filter_status *sts;
 	struct mpq_feed *mpq_feed;
 
-	for (i = 0; i < mpq_demux->sdmx_filter_count; i++) {
+	sdmx_filters = mpq_demux->sdmx_filter_count;
+	for (i = 0; i < sdmx_filters; i++) {
 		/*
 		 * MPQ_TODO: review lookup optimization
 		 * Can have the related mpq_feed index already associated with
@@ -4609,7 +4611,7 @@ static int mpq_sdmx_process_buffer(struct mpq_demux *mpq_demux,
 	}
 
 	MPQ_DVB_DBG_PRINT(
-		"\n\n%s: Before SDMX_process: input read_offset=%u, fill count=%u\n",
+		"%s: Before SDMX_process: input read_offset=%u, fill count=%u\n",
 		__func__, read_offset, fill_count);
 
 	process_start_time = current_kernel_time();
@@ -4652,14 +4654,19 @@ static int mpq_sdmx_process_buffer(struct mpq_demux *mpq_demux,
 int mpq_sdmx_process(struct mpq_demux *mpq_demux,
 	struct sdmx_buff_descr *input,
 	u32 fill_count,
-	u32 read_offset)
+	u32 read_offset,
+	size_t tsp_size)
 {
 	int ret;
 	int todo;
 	int total_bytes_read = 0;
-	int limit = mpq_sdmx_proc_limit * mpq_demux->demux.ts_packet_size;
+	int limit = mpq_sdmx_proc_limit * tsp_size;
 
-	while (fill_count >= mpq_demux->demux.ts_packet_size) {
+	MPQ_DVB_DBG_PRINT(
+		"\n\n%s: read_offset=%u, fill_count=%u, tsp_size=%u\n",
+		__func__, read_offset, fill_count, tsp_size);
+
+	while (fill_count >= tsp_size) {
 		todo = fill_count > limit ? limit : fill_count;
 		ret = mpq_sdmx_process_buffer(mpq_demux, input, todo,
 			read_offset);
@@ -4715,7 +4722,8 @@ static int mpq_sdmx_write(struct mpq_demux *mpq_demux,
 	buf_desc.size = rbuf->size;
 	read_offset = rbuf->pread;
 
-	return mpq_sdmx_process(mpq_demux, &buf_desc, count, read_offset);
+	return mpq_sdmx_process(mpq_demux, &buf_desc, count,
+				read_offset, mpq_demux->demux.ts_packet_size);
 }
 
 int mpq_dmx_write(struct dmx_demux *demux, const char *buf, size_t count)

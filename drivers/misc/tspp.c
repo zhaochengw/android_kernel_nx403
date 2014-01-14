@@ -60,9 +60,8 @@
 /*
  * BAM descriptor FIFO size (in number of descriptors).
  * Max number of descriptors allowed by SPS which is 8K-1.
- * Restrict it to half of this to save DMA memory.
  */
-#define TSPP_SPS_DESCRIPTOR_COUNT      (4 * 1024 - 1)
+#define TSPP_SPS_DESCRIPTOR_COUNT      (8 * 1024 - 1)
 #define TSPP_PACKET_LENGTH             188
 #define TSPP_MIN_BUFFER_SIZE           (TSPP_PACKET_LENGTH)
 
@@ -1756,7 +1755,7 @@ int tspp_add_filter(u32 dev, u32 channel_id,
 	}
 
 	if (filter->priority >= TSPP_NUM_PRIORITIES) {
-		pr_err("tspp invalid source");
+		pr_err("tspp invalid filter priority");
 		return -ENOSR;
 	}
 
@@ -1884,6 +1883,10 @@ int tspp_remove_filter(u32 dev, u32 channel_id,
 	if (!pdev) {
 		pr_err("tspp_remove: can't find device %i", dev);
 		return -ENODEV;
+	}
+	if (filter->priority >= TSPP_NUM_PRIORITIES) {
+		pr_err("tspp invalid filter priority");
+		return -ENOSR;
 	}
 	channel = &pdev->channels[channel_id];
 
@@ -2196,6 +2199,12 @@ int tspp_allocate_buffers(u32 dev, u32 channel_id, u32 count, u32 size,
 	if (count < MIN_ACCEPTABLE_BUFFER_COUNT) {
 		pr_err("%s: tspp requires a minimum of %i buffers\n",
 			__func__, MIN_ACCEPTABLE_BUFFER_COUNT);
+		return -EINVAL;
+	}
+
+	if (count > TSPP_NUM_BUFFERS) {
+		pr_err("%s: tspp requires a maximum of %i buffers\n",
+			__func__, TSPP_NUM_BUFFERS);
 		return -EINVAL;
 	}
 

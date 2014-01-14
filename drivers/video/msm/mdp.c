@@ -45,7 +45,7 @@
 #include "mipi_dsi.h"
 
 uint32 mdp4_extn_disp;
-
+u32 mdp_iommu_max_map_size;
 static struct clk *mdp_clk;
 static struct clk *mdp_pclk;
 static struct clk *mdp_lut_clk;
@@ -166,8 +166,10 @@ static u32 mdp_irq;
 static uint32 mdp_prim_panel_type = NO_PANEL;
 #ifndef CONFIG_FB_MSM_MDP22
 
+#define MDP_HIST_LUT_SIZE (256)
 struct list_head mdp_hist_lut_list;
 DEFINE_MUTEX(mdp_hist_lut_list_mutex);
+uint32_t last_lut[MDP_HIST_LUT_SIZE];
 
 uint32_t mdp_block2base(uint32_t block)
 {
@@ -294,10 +296,13 @@ static int mdp_hist_lut_destroy(void)
 
 static int mdp_hist_lut_init(void)
 {
+	int i;
 	struct mdp_hist_lut_mgmt *temp;
 
 	if (mdp_pp_initialized)
 		return -EEXIST;
+	for (i = 0; i < MDP_HIST_LUT_SIZE; i++)
+		last_lut[i] = i | (i << 8) | (i << 16);
 
 	INIT_LIST_HEAD(&mdp_hist_lut_list);
 
@@ -358,7 +363,6 @@ static int mdp_hist_lut_block2mgmt(uint32_t block,
 	return ret;
 }
 
-#define MDP_HIST_LUT_SIZE (256)
 static int mdp_hist_lut_write_off(struct mdp_hist_lut_data *data,
 		struct mdp_hist_lut_info *info, uint32_t offset)
 {
@@ -380,9 +384,11 @@ static int mdp_hist_lut_write_off(struct mdp_hist_lut_data *data,
 	}
 	mdp_clk_ctrl(1);
 	mdp_pipe_ctrl(MDP_CMD_BLOCK, MDP_BLOCK_POWER_ON, FALSE);
-	for (i = 0; i < MDP_HIST_LUT_SIZE; i++)
+	for (i = 0; i < MDP_HIST_LUT_SIZE; i++) {
+		last_lut[i] = element[i];
 		MDP_OUTP(MDP_BASE + base + offset + (0x400*(sel)) + (4*i),
 				element[i]);
+	}
 	mdp_pipe_ctrl(MDP_CMD_BLOCK, MDP_BLOCK_POWER_OFF, FALSE);
 	mdp_clk_ctrl(0);
 
@@ -553,15 +559,14 @@ static int mdp_lut_hw_update(struct fb_cmap *cmap)
 		    copy_from_user(&b, cmap->blue++, sizeof(b)))
 			return -EFAULT;
 
+		last_lut[i] = ((g & 0xff) | ((b & 0xff) << 8) |
+				((r & 0xff) << 16));
 #ifdef CONFIG_FB_MSM_MDP40
 		MDP_OUTP(MDP_BASE + 0x94800 +
 #else
 		MDP_OUTP(MDP_BASE + 0x93800 +
 #endif
-			(0x400*mdp_lut_i) + cmap->start*4 + i*4,
-				((g & 0xff) |
-				 ((b & 0xff) << 8) |
-				 ((r & 0xff) << 16)));
+			(0x400*mdp_lut_i) + cmap->start*4 + i*4, last_lut[i]);
 	}
 
 	return 0;
@@ -569,6 +574,30 @@ static int mdp_lut_hw_update(struct fb_cmap *cmap)
 
 static int mdp_lut_push;
 static int mdp_lut_push_i;
+static int mdp_lut_resume_needed;
+
+static void mdp_lut_status_restore(void)
+{
+	unsigned long flags;
+
+	if (mdp_lut_resume_needed) {
+		spin_lock_irqsave(&mdp_lut_push_lock, flags);
+		mdp_lut_push = 1;
+		spin_unlock_irqrestore(&mdp_lut_push_lock,
+					flags);
+	}
+}
+
+static void mdp_lut_status_backup(void)
+{
+	uint32_t status = inpdw(MDP_BASE + 0x90070) & 0x7;
+
+	if (status)
+		mdp_lut_resume_needed = 1;
+	else
+		mdp_lut_resume_needed = 0;
+}
+
 static int mdp_lut_update_nonlcdc(struct fb_info *info, struct fb_cmap *cmap)
 {
 	int ret;
@@ -2356,7 +2385,7 @@ static int mdp_off(struct platform_device *pdev)
 	complete_all(&vsync_cntrl.vsync_wait);
 
 	mdp_clk_ctrl(1);
-
+	mdp_lut_status_backup();
 	ret = panel_next_early_off(pdev);
 
 	if (mfd->panel.type == MIPI_CMD_PANEL)
@@ -2400,6 +2429,7 @@ static int mdp_on(struct platform_device *pdev)
 {
 	int ret = 0;
 	struct msm_fb_data_type *mfd;
+	int i;
 	mfd = platform_get_drvdata(pdev);
 
 	pr_debug("%s:+\n", __func__);
@@ -2414,6 +2444,8 @@ static int mdp_on(struct platform_device *pdev)
 		mfd->cont_splash_done = 1;
 	}
 
+	if(mfd->index == 0)
+		mdp_iommu_max_map_size = mfd->max_map_size;
 	mdp_pipe_ctrl(MDP_CMD_BLOCK, MDP_BLOCK_POWER_ON, FALSE);
 
 	ret = panel_next_on(pdev);
@@ -2425,6 +2457,14 @@ static int mdp_on(struct platform_device *pdev)
 		mdp_clk_ctrl(1);
 		mdp_bus_scale_restore_request();
 		mdp4_hw_init();
+
+		/* Initialize HistLUT to last LUT */
+		for (i = 0; i < MDP_HIST_LUT_SIZE; i++) {
+			MDP_OUTP(MDP_BASE + 0x94800 + i*4, last_lut[i]);
+			MDP_OUTP(MDP_BASE + 0x94C00 + i*4, last_lut[i]);
+		}
+
+		mdp_lut_status_restore();
 		outpdw(MDP_BASE + 0x0038, mdp4_display_intf);
 		if (mfd->panel.type == MIPI_CMD_PANEL) {
 			mdp_vsync_cfg_regs(mfd, FALSE);
@@ -2574,7 +2614,6 @@ static int mdp_bus_scale_register(void)
 
 static int bus_index = 1;
 int mdp_bus_scale_update_request(u64 ab_p0, u64 ib_p0, u64 ab_p1, u64 ib_p1)
-
 {
 	if (mdp_bus_scale_handle < 1) {
 		pr_err("%s invalid bus handle\n", __func__);
@@ -2592,7 +2631,7 @@ int mdp_bus_scale_update_request(u64 ab_p0, u64 ib_p0, u64 ab_p1, u64 ib_p1)
 	mdp_bus_usecases[bus_index].vectors[0].ab = min(ab_p0, mdp_max_bw);
 	ib_p0 = max(ib_p0, ab_p0);
 	mdp_bus_usecases[bus_index].vectors[0].ib = min(ib_p0, mdp_max_bw);
-	
+
 	mdp_bus_usecases[bus_index].vectors[1].ab = min(ab_p1, mdp_max_bw);
 	ib_p1 = max(ib_p1, ab_p1);
 	mdp_bus_usecases[bus_index].vectors[1].ib = min(ib_p1, mdp_max_bw);
@@ -2601,6 +2640,7 @@ int mdp_bus_scale_update_request(u64 ab_p0, u64 ib_p0, u64 ab_p1, u64 ib_p1)
 		 (u32)mdp_bus_scale_handle, bus_index,
 		 mdp_bus_usecases[bus_index].vectors[0].ab,
 		 mdp_bus_usecases[bus_index].vectors[0].ib);
+
 	pr_debug("%s: p1 handle=%d index=%d ab=%llu ib=%llu\n", __func__,
 		 (u32)mdp_bus_scale_handle, bus_index,
 		 mdp_bus_usecases[bus_index].vectors[1].ab,
@@ -2623,7 +2663,6 @@ static int mdp_bus_scale_restore_request(void)
 		 mdp_bus_usecases[bus_index].vectors[0].ib,
 		 mdp_bus_usecases[bus_index].vectors[1].ab,
 		 mdp_bus_usecases[bus_index].vectors[1].ib);
-
 }
 #else
 static int mdp_bus_scale_restore_request(void)
@@ -2705,6 +2744,7 @@ static int mdp_irq_clk_setup(struct platform_device *pdev,
 			}
 		}
 	}
+
 	footswitch = regulator_get(&pdev->dev, "vdd");
 	if (IS_ERR(footswitch)) {
 		footswitch = NULL;
@@ -3240,9 +3280,9 @@ static int mdp_probe(struct platform_device *pdev)
 
 	/* req bus bandwidth immediately */
 	mdp_bus_scale_update_request(mdp_max_bw,
-			     mdp_max_bw,
-			     mdp_max_bw,
-			     mdp_max_bw);
+				     mdp_max_bw,
+				     mdp_max_bw,
+				     mdp_max_bw);
 #endif
 
 	/* set driver data */
@@ -3291,7 +3331,6 @@ static int mdp_probe(struct platform_device *pdev)
 		mdp_bus_scale_handle = 0;
 	}
 #endif
-
 	return rc;
 }
 
@@ -3306,10 +3345,11 @@ void mdp_footswitch_ctrl(boolean on)
 
 	if (dsi_pll_vddio)
 		regulator_enable(dsi_pll_vddio);
+
 	if (dsi_pll_vdda)
 		regulator_enable(dsi_pll_vdda);
 
-	mipi_dsi_prepare_clocks();
+	mipi_dsi_prepare_ahb_clocks();
 	mipi_dsi_ahb_ctrl(1);
 	mipi_dsi_phy_ctrl(1);
 	mipi_dsi_clk_enable();
@@ -3325,15 +3365,17 @@ void mdp_footswitch_ctrl(boolean on)
 	}
 
 	mipi_dsi_clk_disable();
+	mipi_dsi_unprepare_clocks();
 	mipi_dsi_phy_ctrl(0);
 	mipi_dsi_ahb_ctrl(0);
-	mipi_dsi_unprepare_clocks();
+	mipi_dsi_unprepare_ahb_clocks();
 
 	if (dsi_pll_vdda)
 		regulator_disable(dsi_pll_vdda);
 
 	if (dsi_pll_vddio)
 		regulator_disable(dsi_pll_vddio);
+
 	mutex_unlock(&mdp_suspend_mutex);
 }
 
