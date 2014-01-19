@@ -1873,7 +1873,6 @@ static int qcedev_check_cipher_params(struct qcedev_cipher_op_req *req,
 		}
 		total += req->vbuf.dst[i].len;
 	}
-
 	if (total != req->data_len) {
 		pr_err("%s: Total (i=%d) dst(%d) buf size != data_len (%d)\n",
 			__func__, i, total, req->data_len);
@@ -1889,7 +1888,6 @@ static int qcedev_check_cipher_params(struct qcedev_cipher_op_req *req,
 		}
 		total += req->vbuf.src[i].len;
 	}
-
 	if (total != req->data_len) {
 		pr_err("%s: Total src(%d) buf size != data_len (%d)\n",
 			__func__, total, req->data_len);
